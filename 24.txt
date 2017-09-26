@@ -1,1 +1,6 @@
+<<<<<<< HEAD
+wh is best.
+=======
 mx is best
+wangqiang is best
+>>>>>>> origin/master
