@@ -1,0 +1,9 @@
+E:\software_homework\testCom\testCom\bin\Debug\testCom.exe.config
+E:\software_homework\testCom\testCom\bin\Debug\testCom.exe
+E:\software_homework\testCom\testCom\bin\Debug\testCom.pdb
+E:\software_homework\testCom\testCom\obj\Debug\testCom.csprojResolveAssemblyReference.cache
+E:\software_homework\testCom\testCom\obj\Debug\testCom.Properties.Resources.resources
+E:\software_homework\testCom\testCom\obj\Debug\testCom.csproj.GenerateResource.Cache
+E:\software_homework\testCom\testCom\obj\Debug\testCom.exe
+E:\software_homework\testCom\testCom\obj\Debug\testCom.pdb
+E:\software_homework\testCom\testCom\obj\Debug\testCom.Form1.resources
