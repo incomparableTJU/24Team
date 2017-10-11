@@ -1,0 +1,44 @@
+string[] str1 = File.ReadAllLines(@"G:\candata.dbc");
+            for (int i = 0; i < str1.Length; i++)
+            {
+                data.Text += str1[i] + "\r\n";
+            }
+            string str2 = data.Text;
+            data.Text = "";
+            string canmessage = "";
+            string mid16 = "";
+            List<string> list = new List<string>();
+            Dictionary<string, List<string>> dd = new Dictionary<string, List<string>>();
+            string[] message = str2.Split(new string[] { "\r\n\r\n" }, StringSplitOptions.None);
+            //recieve.Text = message.Length.ToString();
+            for (int i = 0; i < message.Length; i++)
+            {
+                list.Clear();
+                string[] temp = message[i].Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                for (int k = 0; k < temp.Length; k++)
+                {
+                    if (k == 0)
+                    {
+                        canmessage = temp[k];
+                        string[] info = canmessage.Split(new string[] { " " }, StringSplitOptions.None);
+                        string mid10 = info[1];
+                        mid16 = int.Parse(mid10).ToString("x8");
+                    }
+                    else
+                    {
+                        
+                        list.Add(temp[k]);
+                    }
+                }
+                dd.Add(mid16.TrimStart('0'), list);
+            }
+
+            foreach (string item in dd.Keys)
+            {
+                 data.Text += item + "\r\n";
+                foreach (string t in dd[item]) 
+                {
+                    data.Text += t + "\r\n";
+                }
+
+            }
