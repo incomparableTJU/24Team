@@ -1,0 +1,5 @@
+C:\Users\Administrator\Desktop\DashboardDemo\AJBauer\bin\Debug\AJBauer.dll
+C:\Users\Administrator\Desktop\DashboardDemo\AJBauer\bin\Debug\AJBauer.pdb
+C:\Users\Administrator\Desktop\DashboardDemo\AJBauer\obj\Debug\AJBauer.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DashboardDemo\AJBauer\obj\Debug\AJBauer.dll
+C:\Users\Administrator\Desktop\DashboardDemo\AJBauer\obj\Debug\AJBauer.pdb
