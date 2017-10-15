@@ -41,12 +41,12 @@
             this.saveButton.Text = "保存文件";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.button1_Click);
-           
+            // 
             // FileSaver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 471);
+            this.ClientSize = new System.Drawing.Size(1142, 589);
             this.Controls.Add(this.saveButton);
             this.Name = "FileSaver";
             this.Text = "保存文件";

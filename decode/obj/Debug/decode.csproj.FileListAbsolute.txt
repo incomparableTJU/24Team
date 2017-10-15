@@ -1,0 +1,9 @@
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\bin\Debug\decode.exe.config
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\bin\Debug\decode.exe
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\bin\Debug\decode.pdb
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\obj\Debug\decode.Form1.resources
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\obj\Debug\decode.Properties.Resources.resources
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\obj\Debug\decode.csproj.GenerateResource.Cache
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\obj\Debug\decode.exe
+c:\users\zk\documents\visual studio 2015\Projects\decode\decode\obj\Debug\decode.pdb
+C:\Users\zk\Documents\Visual Studio 2015\Projects\decode\decode\obj\Debug\decode.csprojResolveAssemblyReference.cache
