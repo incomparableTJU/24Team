@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace CanTool
 {
@@ -25,6 +27,19 @@ namespace CanTool
             CreateTreeViewFormTable.BuildTree(
                 this._dtEmployees, this.treeView1,
                 true, "LastName", "EmployeeID", "ReportsTo");
+        }
+
+        public void readdbc(StreamWriter File)
+        {
+            FileStream fsRead = new FileStream(@"D:\learngit\24Team\cantooltree\CanTool\CanTool\canmsg.dbc", FileMode.Open);
+            int fsLen = (int)fsRead.Length;
+            StreamReader reader = new StreamReader(fsRead);
+            string s = reader.ReadToEnd();
+            int i = s.IndexOf("BO_ ") ;
+            int j = s.IndexOf(" ");
+            string str = s.Substring(i, j);
+           // public static extern bool AllocConsole();
+            
         }
 
         public DataTable CreateDataTable()

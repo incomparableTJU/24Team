@@ -6,3 +6,11 @@ E:\projects\CanTool\CanTool\obj\Debug\CanTool.Properties.Resources.resources
 E:\projects\CanTool\CanTool\obj\Debug\CanTool.csproj.GenerateResource.Cache
 E:\projects\CanTool\CanTool\obj\Debug\CanTool.exe
 E:\projects\CanTool\CanTool\obj\Debug\CanTool.pdb
+D:\learngit\24Team\cantooltree\CanTool\CanTool\bin\Debug\CanTool.exe.config
+D:\learngit\24Team\cantooltree\CanTool\CanTool\obj\Debug\CanTool.exe
+D:\learngit\24Team\cantooltree\CanTool\CanTool\obj\Debug\CanTool.pdb
+D:\learngit\24Team\cantooltree\CanTool\CanTool\bin\Debug\CanTool.exe
+D:\learngit\24Team\cantooltree\CanTool\CanTool\bin\Debug\CanTool.pdb
+D:\learngit\24Team\cantooltree\CanTool\CanTool\obj\Debug\CanTool.csprojResolveAssemblyReference.cache
+D:\learngit\24Team\cantooltree\CanTool\CanTool\obj\Debug\CanTool.Properties.Resources.resources
+D:\learngit\24Team\cantooltree\CanTool\CanTool\obj\Debug\CanTool.csproj.GenerateResource.Cache
