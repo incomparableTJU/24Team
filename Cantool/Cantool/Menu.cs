@@ -17,5 +17,40 @@ namespace Cantool
             InitializeComponent();
         }
 
+        private void 文件存储ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //hide the last panel and add new panel
+            this.homePage.Visible = false;
+            this.panel.Visible = true;
+
+            //set the attribution
+            FileSaver fileSaverForm = new FileSaver();
+            fileSaverForm.TopLevel = false;
+            fileSaverForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            fileSaverForm.FormBorderStyle = FormBorderStyle.None;
+
+            this.panel.Controls.Add(fileSaverForm);
+            fileSaverForm.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 首页ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.homePage.Visible = true;
+            this.panel.Visible = false;
+        }
+
+      
+
+       
+
+      
+
+      
+
     }
 }

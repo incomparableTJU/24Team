@@ -23,6 +23,9 @@ namespace Cantool
             InitializeComponent();
         }
         
+        /**
+         * save to *file
+         * */
         private void button1_Click(object sender, EventArgs e)
         {   
             SaveFileDialog fileDialog = new SaveFileDialog();
@@ -108,6 +111,68 @@ namespace Cantool
             fs.Close();
             return true;
         }
+
+        /**
+         * add DB to Class
+         **/
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog filename = new OpenFileDialog();
+            //初始路径,这里设置的是程序的起始位置，可自由设置  
+            filename.InitialDirectory = Application.StartupPath; 
+            filename.Filter = "All files(*.*)|*.*|dbc files(*.dbc)|*.dbc";
+            //文件类型的显示顺序（上一行.txt设为第二位）
+            filename.FilterIndex = 2;    
+            filename.RestoreDirectory = true; //对话框记忆之前打开的目录  
+            if (filename.ShowDialog() == DialogResult.OK)
+            {
+                //获得完整路径在textBox1中显示
+                textBox1.Text = filename.FileName.ToString();  
+                StreamReader sr = new StreamReader(filename.FileName, Encoding.Default);
+                string outtemp,intemp = null;
+                List<Message> database = new List<Message>();
+                Message m = null;
+                outtemp = sr.ReadLine();
+                while(outtemp!=null)
+                {
+                    if (outtemp.Contains("BO_"))
+                    {
+                        m = getMessage(outtemp);
+
+                        intemp = sr.ReadLine();
+                        while (intemp.Contains("SG_"))
+                        {
+                            //将signal add到message中
+                            m.signals.Add(getSignal(intemp));
+                            intemp = sr.ReadLine();
+                        }
+                    }
+                    database.Add(m);
+                    outtemp = intemp;
+                }
+                sr.Close();
+            }  
+        }
+
+        //将outtemp解析到类Message中
+        private Message getMessage(string line)
+        {
+            Message m = new Message();
+
+            return m;
+        }
+        //将intemp解析到类Message中
+        private Signal getSignal(string line)
+        {
+            Signal s = new Signal();
+
+            return s;
+        }
+
+        
+
+        
+
 
     }
 }
