@@ -10,8 +10,7 @@ namespace CanTool
 
         public static void BuildTree(DataTable dt, TreeView treeView, Boolean expandAll,
             string displayName, string nodeId, string parentId)
-        {
-            // Clear the TreeView if there are another datas in this TreeView
+        {          
             treeView.Nodes.Clear();
 
             dic = new Dictionary<int, List<TreeNode>>();

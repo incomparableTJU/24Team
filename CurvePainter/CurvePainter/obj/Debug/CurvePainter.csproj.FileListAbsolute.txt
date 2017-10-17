@@ -1,0 +1,10 @@
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainter\bin\Debug\CurvePainter.dll
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainter\bin\Debug\CurvePainter.pdb
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainter\obj\Debug\CurvePainter.dll
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainter\obj\Debug\CurvePainter.pdb
+F:\课程\现代软件工程\CurvePainter\CurvePainter\bin\Debug\CurvePainter.dll
+F:\课程\现代软件工程\CurvePainter\CurvePainter\bin\Debug\CurvePainter.pdb
+F:\课程\现代软件工程\CurvePainter\CurvePainter\obj\Debug\CurvePainter.csprojResolveAssemblyReference.cache
+F:\课程\现代软件工程\CurvePainter\CurvePainter\obj\Debug\CurvePainter.dll
+F:\课程\现代软件工程\CurvePainter\CurvePainter\obj\Debug\CurvePainter.pdb
