@@ -24,9 +24,7 @@ namespace CanTool
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             
-            AllocConsole();
-            Console.WriteLine("123");
-            // Shell.WriteLine("注意：启动程序...");
+         
 
         }
     }

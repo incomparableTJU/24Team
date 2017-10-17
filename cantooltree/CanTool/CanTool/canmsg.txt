@@ -20,13 +20,11 @@ BO_ 856 CDU_1: 8 CDU
  SG_ CDU_HVAC_DriverTempSelect : 36|5@0+ (0.5,18) [18|32] "°„C"   Vector__XXX
  SG_ HVAC_PsnTempSelect : 44|5@0+ (0.5,18) [18|32] ""   Vector__XXX
  SG_ CDU_HVACCtrlModeSt : 54|3@0+ (1,0) [0|7] ""  HVAC
- SG_ CDU_ControlSt : 55|1@0+ (1,0) [0|1] ""  HVAC
-
+ SG_ CDU_ControlSt : 55|1@0+ (1,0) [0|1] ""  HVAC 
 BO_ 61 CDU_4: 8 CDU
  SG_ CDU_HVACACCfg : 1|2@0+ (1,0) [0|3] ""  HVAC
  SG_ CDU_HVACAirCirCfg : 3|2@0+ (1,0) [0|3] ""  HVAC
  SG_ CDU_HVACComfortCfg : 5|2@0+ (1,0) [0|3] ""  HVAC
-
 BO_ 1067 CDU_NM: 8 CDU
  SG_ CDU_NMDestAddress : 7|8@0+ (1,0) [0|255] ""  BCM,PEPS,ICM,CDU
  SG_ CDU_NMAlive : 8|1@0+ (1,0) [0|1] ""  BCM,PEPS,ICM,CDU
@@ -36,7 +34,6 @@ BO_ 1067 CDU_NM: 8 CDU
  SG_ CDU_NMSleepAck : 13|1@0+ (1,0) [0|1] ""  BCM,PEPS,ICM,CDU
  SG_ CDU_NMWakeupOrignin : 23|8@0+ (1,0) [0|255] ""  BCM,PEPS,ICM,CDU
  SG_ CDU_NMDataField : 31|40@0+ (1,0) [0|1] ""  BCM,PEPS,ICM,CDU
-
 BO_ 1056 BCM_NM: 8 BCM
  SG_ BCM_NMDestAddress : 7|8@0+ (1,0) [0|255] ""  BCM,PEPS,ICM,CDU
  SG_ BCM_NMAlive : 8|1@0+ (1,0) [0|1] ""  BCM,PEPS,ICM,CDU
@@ -46,14 +43,11 @@ BO_ 1056 BCM_NM: 8 BCM
  SG_ BCM_NMSleepAck : 13|1@0+ (1,0) [0|1] ""  BCM,PEPS,ICM,CDU
  SG_ BCM_NMWakeupOrignin : 23|8@0+ (1,0) [0|255] ""  BCM,PEPS,ICM,CDU
  SG_ BCM_NMDataField : 31|40@0+ (1,0) [0|1] ""  BCM,PEPS,ICM,CDU
-
 BO_ 792 BCM_BCAN_1: 8 BCM
  SG_ BCM_KeySt : 1|2@0+ (1,0) [1|3] ""  PEPS,ICM,AVM,CDU,HVAC
-
 BO_ 837 BCM_ESC_2: 8 BCM
  SG_ ESC_VehSpdVD : 37|1@0+ (1,0) [0|1] ""  BCM,PEPS,ICM,AVM,CDU
  SG_ ESC_VehSpd : 36|13@0+ (0.05625,0) [0|240] ""  BCM,PEPS,ICM,AVM,CDU
-
 BO_ 915 BCM_VCU_2: 8 BCM
  SG_ VCU_CompressorPwrLimit : 21|6@0+ (100,0) [0|6000] "w"  HVAC
  SG_ VCU_CompressorPwrLimitAct : 32|1@0+ (1,0) [0|1] ""  HVAC
@@ -61,7 +55,6 @@ BO_ 915 BCM_VCU_2: 8 BCM
  SG_ VCU_PTCrPwrLimitAct : 33|1@0+ (1,0) [0|1] ""  HVAC
  SG_ VCU_AirCompressorReq : 36|1@0+ (1,0) [0|1] ""  HVAC
  SG_ VCU_AirCompressorReqVD : 37|1@0+ (1,0) [0|1] ""  HVAC
-
 BO_ 800 HVAC_1: 8 HVAC
  SG_ HVAC_AirCompressorSt : 2|3@0+ (1,0) [0|1] ""  CDU
  SG_ HVAC_CorrectedExterTempVD : 3|1@0+ (1,0) [0|1] ""  BCM,CDU
@@ -84,7 +77,6 @@ BO_ 800 HVAC_1: 8 HVAC
  SG_ HVAC_IonMode : 55|2@0+ (1,0) [0|3] ""  CDU
  SG_ HVAC_WindExitSpd : 59|4@0+ (1,0) [0|15] ""  CDU
  SG_ HVAC_PsnTempSelect : 48|5@0+ (0.5,18) [18|32] ""  CDU
-
 BO_ 801 HVAC_2: 8 HVAC
  SG_ HVAC_RawCabinTemp : 7|8@0+ (0.5,-40) [-40|87.5] "°„C"  CDU
  SG_ HVAC_CorrectedCabinTemp : 15|8@0+ (0.5,-40) [-40|87.5] "°„C"  CDU
@@ -93,12 +85,10 @@ BO_ 801 HVAC_2: 8 HVAC
  SG_ HVAC_PTCPwrAct : 33|10@0+ (10,0) [0|8000] "w"  BCM
  SG_ HVAC_stPTCAct : 55|3@0+ (1,0) [0|1] ""  BCM
  SG_ HVAC_CorrectedCabinTempVD : 18|1@0+ (1,0) [0|1] ""  CDU
-
 BO_ 797 HVAC_3: 8 HVAC
  SG_ HVAC_ACCfgSt : 0|1@0+ (1,0) [0|1] ""  CDU
  SG_ HVAC_AirCirCfgSt : 1|1@0+ (1,0) [0|1] ""  CDU
  SG_ HVAC_ComfortCfgSt : 3|2@0+ (1,0) [0|1] ""  CDU
-
 BO_ 864 HVAC_4: 8 ACP
  SG_ HVAC_ACPCommandVD : 0|1@0+ (1,0) [0|1] ""  ACP
  SG_ HVAC_ACPCommand : 2|2@0+ (1,0) [0|3] ""  ACP
@@ -106,7 +96,6 @@ BO_ 864 HVAC_4: 8 ACP
  SG_ HVAC_ACPHighSidePress : 21|6@0+ (0.5,0) [0|31] ""  ACP
  SG_ HVAC_PTCPowerRatio : 31|8@0+ (1,0) [0|100] ""  PTC
  SG_ HVAC_Checksum : 39|8@0+ (1,0) [155|255] ""  PTC
-
 BO_ 867 ACP_1: 8 ACP
  SG_ ACP_Speed : 6|7@0+ (100,0) [0|8600] ""  HVAC
  SG_ ACPComsumpPwr : 15|10@0+ (10,0) [0|8000] ""  HVAC
@@ -116,7 +105,6 @@ BO_ 867 ACP_1: 8 ACP
  SG_ ACP_ExtState : 58|3@0+ (1,0) [0|7] ""  HVAC
  SG_ ACP_FailGrade : 60|2@0+ (1,0) [0|3] ""  HVAC
  SG_ ACP_BaseState : 63|3@0+ (1,0) [0|7] ""  HVAC
-
 BO_ 868 PTC_1: 8 PTC
  SG_ PTC_ElementError : 7|4@0+ (1,0) [0|15] ""  HVAC
  SG_ PTC_TemperatureOver : 3|1@0+ (1,0) [0|1] ""  HVAC
