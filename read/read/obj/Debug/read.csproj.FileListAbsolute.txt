@@ -1,0 +1,6 @@
+E:\projects\read\read\bin\Debug\read.exe.config
+E:\projects\read\read\obj\Debug\read.csprojResolveAssemblyReference.cache
+E:\projects\read\read\bin\Debug\read.exe
+E:\projects\read\read\bin\Debug\read.pdb
+E:\projects\read\read\obj\Debug\read.exe
+E:\projects\read\read\obj\Debug\read.pdb
