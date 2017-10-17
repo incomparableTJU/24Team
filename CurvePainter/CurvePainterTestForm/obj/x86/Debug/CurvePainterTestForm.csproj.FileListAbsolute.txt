@@ -1,0 +1,21 @@
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainterTestForm.exe
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainterTestForm.pdb
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainter.dll
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainter.pdb
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.Form1.resources
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.Properties.Resources.resources
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.exe
+C:\Users\sj\Documents\Visual Studio 2010\Projects\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.pdb
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.exe
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.pdb
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainterTestForm.exe
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainterTestForm.pdb
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainter.dll
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\bin\Debug\CurvePainter.pdb
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.csprojResolveAssemblyReference.cache
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.Form1.resources
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.Properties.Resources.resources
+F:\课程\现代软件工程\CurvePainter\CurvePainterTestForm\obj\x86\Debug\CurvePainterTestForm.csproj.GenerateResource.Cache
