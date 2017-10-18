@@ -1,0 +1,8 @@
+E:\projects\curvepaint\curvepaint\bin\Debug\curvepaint.exe.config
+E:\projects\curvepaint\curvepaint\obj\Debug\curvepaint.csprojResolveAssemblyReference.cache
+E:\projects\curvepaint\curvepaint\obj\Debug\curvepaint.Properties.Resources.resources
+E:\projects\curvepaint\curvepaint\obj\Debug\curvepaint.csproj.GenerateResource.Cache
+E:\projects\curvepaint\curvepaint\bin\Debug\curvepaint.exe
+E:\projects\curvepaint\curvepaint\bin\Debug\curvepaint.pdb
+E:\projects\curvepaint\curvepaint\obj\Debug\curvepaint.exe
+E:\projects\curvepaint\curvepaint\obj\Debug\curvepaint.pdb
