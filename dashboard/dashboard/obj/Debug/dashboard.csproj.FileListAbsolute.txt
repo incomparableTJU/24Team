@@ -1,0 +1,8 @@
+E:\projects\dashboard\dashboard\bin\Debug\dashboard.exe.config
+E:\projects\dashboard\dashboard\bin\Debug\dashboard.exe
+E:\projects\dashboard\dashboard\bin\Debug\dashboard.pdb
+E:\projects\dashboard\dashboard\obj\Debug\dashboard.csprojResolveAssemblyReference.cache
+E:\projects\dashboard\dashboard\obj\Debug\dashboard.Properties.Resources.resources
+E:\projects\dashboard\dashboard\obj\Debug\dashboard.csproj.GenerateResource.Cache
+E:\projects\dashboard\dashboard\obj\Debug\dashboard.exe
+E:\projects\dashboard\dashboard\obj\Debug\dashboard.pdb
