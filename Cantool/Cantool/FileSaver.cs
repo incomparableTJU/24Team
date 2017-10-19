@@ -16,7 +16,8 @@ namespace Cantool
 {
     public partial class FileSaver : Form
     {
-        Object content = "abcdefg"; //需保存的内容
+        Object content = "abcdefg"; //test
+        List<Message> database = new List<Message>();
 
         public FileSaver()
         {
@@ -44,7 +45,8 @@ namespace Cantool
                     FileStream fs = new FileStream(filename, System.IO.FileMode.Create, System.IO.FileAccess.Write);
                     //StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.Default);
                     StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
-                    sw.WriteLine(content.ToString());
+                    for (int i = 0; i<database.Count();i++ )
+                        sw.WriteLine(database[i].toString());
                     sw.Close();
                     fs.Close();
                 }
@@ -79,13 +81,21 @@ namespace Cantool
                 xmlWriter.Formatting = Formatting.Indented;
                 // This will output the XML declaration   
                 xmlWriter.WriteStartDocument();
-                xmlWriter.WriteStartElement("Contacts");
-                xmlWriter.WriteStartElement("Contact");
-                xmlWriter.WriteAttributeString("id", "01");
-                xmlWriter.WriteElementString("Name", "Daisy Abbey");
-                xmlWriter.WriteElementString("Gender", "female");
-                // close contact </contact>   
-                xmlWriter.WriteEndElement();
+                xmlWriter.WriteStartElement("Messages");
+                for (int i = 0; i < database.Count(); i++)
+                {
+                    xmlWriter.WriteStartElement("Message");
+                    xmlWriter.WriteAttributeString("id", database[i].messageId.ToString());
+                    xmlWriter.WriteAttributeString("name", database[i].messageName.ToString());
+                    xmlWriter.WriteAttributeString("DLC", database[i].DLC.ToString());
+                    xmlWriter.WriteAttributeString("fromECU", database[i].nodeNameECU.ToString());
+                    for (int j = 0; j < database[i].signals.Length; j++)
+                    {
+                        if (database[i].signals[j]!=null)
+                            xmlWriter.WriteElementString("Signal", database[i].signals[j]);
+                    }
+                    xmlWriter.WriteEndElement();
+                }
                 // close contacts </contact>   
                 xmlWriter.WriteEndElement();
                 xmlWriter.WriteEndDocument();
@@ -101,12 +111,16 @@ namespace Cantool
         {
              // Object->Json
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-            string json = jsonSerializer.Serialize(content);
+            string json = null;
             //wirte into file
             FileStream fs = new FileStream(filename, System.IO.FileMode.Create, System.IO.FileAccess.Write);
             //StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.Default);
             StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
-            sw.WriteLine(json);
+            for (int i = 0; i < database.Count(); i++)
+            {
+                json = jsonSerializer.Serialize(database[i]);
+                sw.WriteLine(json);
+            }
             sw.Close();
             fs.Close();
             return true;
@@ -123,51 +137,49 @@ namespace Cantool
             filename.Filter = "All files(*.*)|*.*|dbc files(*.dbc)|*.dbc";
             //文件类型的显示顺序（上一行.txt设为第二位）
             filename.FilterIndex = 2;    
-            filename.RestoreDirectory = true; //对话框记忆之前打开的目录  
+            filename.RestoreDirectory = true; //对话框记忆之前打开的目录
+            //List<Message> database = new List<Message>();
+            Message m = new Message();
             if (filename.ShowDialog() == DialogResult.OK)
             {
                 //获得完整路径在textBox1中显示
                 textBox1.Text = filename.FileName.ToString();  
                 StreamReader sr = new StreamReader(filename.FileName, Encoding.Default);
-                string outtemp,intemp = null;
-                List<Message> database = new List<Message>();
-                Message m = null;
+                string outtemp = null,intemp = null;
                 outtemp = sr.ReadLine();
+                int iM = 1 ,iS = 1;//counter
                 while(outtemp!=null)
                 {
                     if (outtemp.Contains("BO_"))
                     {
-                        m = getMessage(outtemp);
-
+                        iS = 1;//redefine
+                        m.getMessage(outtemp);
+                        textBox2.AppendText(iM.ToString()+" MessageId:"+m.messageId +" MessageName:"+m.messageName+" MessagFromECU："+m.nodeNameECU+ "\r\n");
+                        iM++;
+                        m.signals = new string[30];
                         intemp = sr.ReadLine();
-                        while (intemp.Contains("SG_"))
+                        while (intemp!=null && intemp.Contains("SG_"))
                         {
+                            textBox2.AppendText(iS.ToString()+" "+intemp + "\r\n");
                             //将signal add到message中
-                            m.signals.Add(getSignal(intemp));
+                            m.signals[iS-1] = intemp;
+                            iS++;
+                            //getSignal(intemp);
                             intemp = sr.ReadLine();
                         }
                     }
                     database.Add(m);
+                    m = new Message();
                     outtemp = intemp;
                 }
                 sr.Close();
+
             }  
         }
 
-        //将outtemp解析到类Message中
-        private Message getMessage(string line)
-        {
-            Message m = new Message();
+        
 
-            return m;
-        }
-        //将intemp解析到类Message中
-        private Signal getSignal(string line)
-        {
-            Signal s = new Signal();
-
-            return s;
-        }
+        
 
         
 
