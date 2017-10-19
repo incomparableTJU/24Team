@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CanMessageLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CanMessageLayout.Designer.cs">
+      <DependentUpon>CanMessageLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs" />
     <Compile Include="FileSaver.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FileSaver.Designer.cs">
       <DependentUpon>FileSaver.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signal.cs" />
+    <EmbeddedResource Include="CanMessageLayout.resx">
+      <DependentUpon>CanMessageLayout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FileSaver.resx">
       <DependentUpon>FileSaver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -64,6 +86,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Message.datasource" />
+    <None Include="Properties\DataSources\Signal.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
