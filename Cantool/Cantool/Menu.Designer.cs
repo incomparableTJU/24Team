@@ -181,6 +181,7 @@
             this.can信息布局ToolStripMenuItem.Name = "can信息布局ToolStripMenuItem";
             this.can信息布局ToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
             this.can信息布局ToolStripMenuItem.Text = "Can信息布局";
+            this.can信息布局ToolStripMenuItem.Click += new System.EventHandler(this.can信息布局ToolStripMenuItem_Click);
             // 
             // 实时曲线ToolStripMenuItem1
             // 
