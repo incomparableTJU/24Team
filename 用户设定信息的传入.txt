@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace decode
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void MyInit(List<string> l)
+        {
+            /*
+            foreach (string item in dd.Keys)
+            {
+                data.Text += item + "\r\n";
+                foreach (string t in dd[item])
+                {
+                    data.Text += t + "\r\n";
+                }
+            }
+            */
+           
+            
+            Point btn_localtion = new Point(76, 31);
+            int row = 1;
+            int move_to_right = 480;
+            foreach (string kv in l)
+            {
+                int l_x = btn_localtion.X;
+                int l_y = btn_localtion.Y + 60 * row;
+                String label_name = kv;
+                Point lo = new Point(l_x, l_y);
+                create_label(label_name, lo);
+
+                int t_x = btn_localtion.X + move_to_right;
+                int t_y = l_y;
+
+                Point t_lo = new Point(t_x, t_y);
+                create_textbox("", t_lo);
+
+                row++;
+            }
+        }
+
+            private void create_label(String l_name, Point location)
+        {
+            Label l = new Label();
+
+            l.AutoSize = true;
+            l.Location = location;
+            l.Name = l_name;
+            l.Size = new System.Drawing.Size(41, 12);
+            l.TabIndex = 1;
+            l.Text = l_name;
+            l.Visible = true;
+
+            this.Controls.Add(l);
+        }
+
+        private void create_textbox(String t_name, Point location)
+        {
+            TextBox textbox = new TextBox();
+
+            textbox.Location = location;
+            textbox.Name = t_name;
+            textbox.Size = new System.Drawing.Size(100, 41);
+
+            Console.WriteLine(t_name);
+
+            this.Controls.Add(textbox);
+        }
+
+    }
+
+
+
+    }
+
