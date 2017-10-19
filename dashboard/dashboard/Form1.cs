@@ -16,12 +16,13 @@ namespace dashboard
         {
             InitializeComponent();
         }
-  /*      private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.DoEvents();
-            System.Random rnd = new System.Random();
-            rand = rnd.Next(0, 255);
-            timer1.Enabled = true;
-        }*/
+            if (aGauge2.Value < 400)
+                aGauge2.Value += 10;
+            else
+                aGauge2.Value = 0;
+
+        }
     }
 }

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
-     //       this.timer1.Enabled = true;
-       //     this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 
+            this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.aGauge2 = new dashboard.AGauge();
             this.SuspendLayout();
             // 
@@ -142,11 +141,12 @@
             this.aGauge2.TabIndex = 4;
             this.aGauge2.Text = "aGauge2";
 
+            //timer1
 
-            System.Random rnd = new System.Random();
-            rand = rnd.Next(0, 255);
-            this.aGauge2.Value = rand;
-            this.aGauge2.Refresh();
+            this.timer1.Enabled = true;
+            //  this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -160,7 +160,7 @@
 
     #endregion
         private AGauge aGauge2;
-     //   private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer1;
         int rand;
     }
 }
