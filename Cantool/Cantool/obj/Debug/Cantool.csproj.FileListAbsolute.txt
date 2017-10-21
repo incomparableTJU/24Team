@@ -20,3 +20,5 @@ C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.FileSaver.resour
 C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.Menu.resources
 C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.Properties.Resources.resources
 C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.csproj.GenerateResource.Cache
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.Form1.resources
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.ReceiveData.resources

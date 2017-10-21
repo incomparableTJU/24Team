@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Set_Com;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,13 +64,21 @@ namespace Cantool
             layout.Show();
         }
 
-      
+        private void 设定COM口ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //hide the last panel and add new panel
+            this.panel.Controls.Clear();
+            this.homePage.Visible = false;
+            this.panel.Visible = true;
 
-       
+            //set the attribution of setcom
+            fm_set_Com set_com = new fm_set_Com();
+            set_com.TopLevel = false;
+            set_com.Dock = System.Windows.Forms.DockStyle.Fill;
+            set_com.FormBorderStyle = FormBorderStyle.None;
 
-      
-
-      
-
+            this.panel.Controls.Add(set_com);
+            set_com.Show();
+        }
     }
 }
