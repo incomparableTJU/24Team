@@ -38,10 +38,11 @@ namespace dashboard
                 //  MessageBox.Show("name");
             }
         }
-        public void select(AGauge agu, int i)
+        public void select(AGauge agu, int i,Label label)
         {
             agu.CapText = signallist[i].name;
             agu.Value = signallist[i].value;
+            label.Text = signallist[i].value.ToString();
         }
         public void update(AGauge agu, string signalname, float value)
         {

@@ -44,7 +44,7 @@ namespace dashboard
             {
                 if (comboBox1.SelectedIndex == i)
                 {
-                    sig.select(aGauge2, i);
+                    sig.select(aGauge2, i,label1);
 
                 }
             }

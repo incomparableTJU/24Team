@@ -33,11 +33,12 @@ namespace dashboard
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.aGauge2 = new dashboard.AGauge();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;                   
+            this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(21, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
@@ -153,25 +154,38 @@ namespace dashboard
             this.aGauge2.Value = 0F;
             this.aGauge2.ValueInRangeChanged += new dashboard.AGauge.ValueInRangeChangedDelegate(this.aGauge2_ValueInRangeChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = false;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("宋体", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(352, 368);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 40);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "labels";
+            
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 452);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.aGauge2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form2";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
     }
 
     #endregion
         private AGauge aGauge2;  
         private System.Windows.Forms.ComboBox comboBox1;
-
-   
+        private System.Windows.Forms.Label label1;
     }
 }
 
