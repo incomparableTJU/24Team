@@ -49,9 +49,12 @@ namespace Set_Com
         {
             byte[] ReDatas = new byte[comDevice.BytesToRead];
             comDevice.Read(ReDatas, 0, ReDatas.Length);
+            String sdata = new ASCIIEncoding().GetString(ReDatas);
+
             this.AddData(ReDatas);
 
         }
+        
 
         public void AddData(byte[] data)
         {

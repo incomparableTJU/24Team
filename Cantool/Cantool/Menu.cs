@@ -80,5 +80,10 @@ namespace Cantool
             this.panel.Controls.Add(set_com);
             set_com.Show();
         }
+
+        private void 接收数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
