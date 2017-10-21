@@ -1,4 +1,7 @@
-﻿namespace dashboard
+﻿using System.Collections.Generic;
+//using System.Windows.Forms;
+
+namespace dashboard
 {
     partial class Form1
     {
@@ -28,11 +31,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-
-            this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.aGauge2 = new dashboard.AGauge();
             this.SuspendLayout();
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;                   
+            this.comboBox1.Location = new System.Drawing.Point(21, 22);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // aGauge2
             // 
@@ -47,7 +57,7 @@
         System.Drawing.Color.Black,
         System.Drawing.Color.Black,
         System.Drawing.Color.Black,
-        System.Drawing.Color.Black };
+        System.Drawing.Color.Black};
             this.aGauge2.CapPosition = new System.Drawing.Point(102, 200);
             this.aGauge2.CapsPosition = new System.Drawing.Point[] {
         new System.Drawing.Point(10, 10),
@@ -58,16 +68,16 @@
             this.aGauge2.CapsText = new string[] {
         "",
         "",
-        "mV",
+        "",
         "",
         ""};
-            this.aGauge2.CapText = "mV";
+            this.aGauge2.CapText = "";
             this.aGauge2.Center = new System.Drawing.Point(170, 170);
             this.aGauge2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aGauge2.Location = new System.Drawing.Point(66, 78);
-            this.aGauge2.Margin = new System.Windows.Forms.Padding(4);
-            this.aGauge2.MaxValue = 400F;   //最大值
-            this.aGauge2.MinValue = -100F;   //最小值
+            this.aGauge2.Location = new System.Drawing.Point(176, 54);
+            this.aGauge2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.aGauge2.MaxValue = 400F;
+            this.aGauge2.MinValue = -100F;
             this.aGauge2.Name = "aGauge2";
             this.aGauge2.NeedleColor1 = dashboard.AGauge.NeedleColorEnum.Yellow;
             this.aGauge2.NeedleColor2 = System.Drawing.Color.DimGray;
@@ -92,7 +102,7 @@
         true,
         false,
         false};
-            this.aGauge2.RangesEndValue = new float[] {//不同颜色结束数值
+            this.aGauge2.RangesEndValue = new float[] {
         100F,
         290F,
         400F,
@@ -110,7 +120,7 @@
         130,
         80,
         80};
-            this.aGauge2.RangesStartValue = new float[] {//不同颜色开始数值
+            this.aGauge2.RangesStartValue = new float[] {
         -100F,
         100F,
         290F,
@@ -137,31 +147,31 @@
             this.aGauge2.ScaleNumbersRotation = 0;
             this.aGauge2.ScaleNumbersStartScaleLine = 0;
             this.aGauge2.ScaleNumbersStepScaleLines = 1;
-            this.aGauge2.Size = new System.Drawing.Size(567, 414);
+            this.aGauge2.Size = new System.Drawing.Size(504, 345);
             this.aGauge2.TabIndex = 4;
             this.aGauge2.Text = "aGauge2";
-
-            //timer1
-
-            this.timer1.Enabled = true;
-            //  this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-
-            // Form2
+            this.aGauge2.Value = 0F;
+            this.aGauge2.ValueInRangeChanged += new dashboard.AGauge.ValueInRangeChangedDelegate(this.aGauge2_ValueInRangeChanged);
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 542);
+            this.ClientSize = new System.Drawing.Size(735, 452);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.aGauge2);
-            this.Name = "Form2";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Form1";
             this.Text = "Form2";
             this.ResumeLayout(false);
+
     }
 
     #endregion
-        private AGauge aGauge2;
-        private System.Windows.Forms.Timer timer1;
-        int rand;
+        private AGauge aGauge2;  
+        private System.Windows.Forms.ComboBox comboBox1;
+
+   
     }
 }
 
