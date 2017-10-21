@@ -9,3 +9,14 @@ C:\Users\Rainbow Dream\Desktop\Cantool\Cantool\obj\Debug\Cantool.csproj.Generate
 C:\Users\Rainbow Dream\Desktop\Cantool\Cantool\obj\Debug\Cantool.exe
 C:\Users\Rainbow Dream\Desktop\Cantool\Cantool\obj\Debug\Cantool.pdb
 C:\Users\Rainbow Dream\Desktop\Cantool\Cantool\obj\Debug\Cantool.CanMessageLayout.resources
+C:\Users\Administrator\24Team\Cantool\Cantool\bin\Debug\Cantool.exe.config
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.exe
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.pdb
+C:\Users\Administrator\24Team\Cantool\Cantool\bin\Debug\Cantool.exe
+C:\Users\Administrator\24Team\Cantool\Cantool\bin\Debug\Cantool.pdb
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.CanMessageLayout.resources
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.FileSaver.resources
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.Menu.resources
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.Properties.Resources.resources
+C:\Users\Administrator\24Team\Cantool\Cantool\obj\Debug\Cantool.csproj.GenerateResource.Cache
