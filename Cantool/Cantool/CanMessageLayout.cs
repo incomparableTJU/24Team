@@ -51,11 +51,8 @@ namespace Cantool
 
         }
 
-
-        private void messageComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        public List<Color> getColor()
         {
-            this.canLayout.DefaultCellStyle.BackColor = Color.White;
-            //set color list~~
             List<Color> colorful = new List<Color>();
             colorful.Add(Color.LightCoral);
             colorful.Add(Color.LightPink);
@@ -70,6 +67,17 @@ namespace Cantool
             colorful.Add(Color.Lavender);
             colorful.Add(Color.LightGray);
             colorful.Add(Color.Thistle);
+            return colorful;
+        }
+
+        private void messageComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 8; i++)
+                for (int j = 0; j < 8;j++ )
+                    this.canLayout.Rows[i].Cells[j].Style.BackColor = Color.White;
+            //this.canLayout.DefaultCellStyle.BackColor = Color.White;
+
+            List<Color> colorful = getColor();
 
             //get displayed message
             Message selectedMessage = (Message)this.messageComboBox.SelectedItem;
