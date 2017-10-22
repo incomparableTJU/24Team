@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,24 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace curvepaint
 {
-    public partial class Form1 : Form
+    public partial class curveForm : Form
     {
-        private Queue<double> dataQueue = new Queue<double>(100);
-        private int curValue = 0;
+        private Queue<double> dataQueue = new Queue<double>(100);    
         private int num = 10;//每次删除增加几个点
-        public  Form1()
+        List<float> val = new List<float>();
+        List<string> signalname = new List<string>();
+        signal sig = new signal();
+        string current;//当前选择的名字
+        public  curveForm()
         {
             InitializeComponent();
+            
+            val.Add(34);
+            val.Add(50);
+            string[] name = { "si1", "si2", "si3" };
+            float[] value = { 23, 45, 67 };
+            
+            sig.initsignal(3, name, value, comboBox1);
         }
         /// <summary>
 
@@ -121,17 +132,22 @@ namespace curvepaint
             }
             for (int i = 0; i < num; i++)
             {
-
-                //对curValue只取[0,360]之间的值
-                
-                //curValue = curValue % 360;
-                //dataQueue.Enqueue((50 * Math.Sin(curValue * Math.PI / 180)) + 50);  //对得到的正玄值，放大50倍，并上移50
-                //     curValue = curValue + 10;
-                Random ro = new Random();
-                curValue = ro.Next(0, 100);           
-                dataQueue.Enqueue(curValue);
+               
+                foreach (int elements in val)     
+                dataQueue.Enqueue(elements);
                }          
         }
-
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for(int i=0;i<sig.sigcount();i++)
+            {
+                if (comboBox1.SelectedIndex == i)
+                {
+                    current = comboBox1.Text.ToString();
+                    MessageBox.Show("显示的是" + current);
+                }
+            }
+              
+        }
     }
 }

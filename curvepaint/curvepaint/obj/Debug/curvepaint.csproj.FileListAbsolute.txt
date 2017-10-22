@@ -6,3 +6,12 @@ E:\projects\curvepaint\curvepaint\bin\Debug\curvepaint.exe
 E:\projects\curvepaint\curvepaint\bin\Debug\curvepaint.pdb
 E:\projects\curvepaint\curvepaint\obj\Debug\curvepaint.exe
 E:\projects\curvepaint\curvepaint\obj\Debug\curvepaint.pdb
+D:\learngit\24Team\curvepaint\curvepaint\bin\Debug\curvepaint.exe.config
+D:\learngit\24Team\curvepaint\curvepaint\obj\Debug\curvepaint.exe
+D:\learngit\24Team\curvepaint\curvepaint\obj\Debug\curvepaint.pdb
+D:\learngit\24Team\curvepaint\curvepaint\obj\Debug\curvepaint.csprojResolveAssemblyReference.cache
+D:\learngit\24Team\curvepaint\curvepaint\obj\Debug\curvepaint.Properties.Resources.resources
+D:\learngit\24Team\curvepaint\curvepaint\obj\Debug\curvepaint.csproj.GenerateResource.Cache
+D:\learngit\24Team\curvepaint\curvepaint\bin\Debug\curvepaint.exe
+D:\learngit\24Team\curvepaint\curvepaint\bin\Debug\curvepaint.pdb
+D:\learngit\24Team\curvepaint\curvepaint\obj\Debug\curvepaint.curveForm.resources
