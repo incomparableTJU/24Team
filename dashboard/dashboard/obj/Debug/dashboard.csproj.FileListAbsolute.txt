@@ -11,8 +11,8 @@ D:\learngit\24Team\dashboard\dashboard\bin\Debug\dashboard.exe.config
 D:\learngit\24Team\dashboard\dashboard\obj\Debug\dashboard.exe
 D:\learngit\24Team\dashboard\dashboard\obj\Debug\dashboard.pdb
 D:\learngit\24Team\dashboard\dashboard\obj\Debug\dashboard.csprojResolveAssemblyReference.cache
-D:\learngit\24Team\dashboard\dashboard\obj\Debug\dashboard.Form1.resources
 D:\learngit\24Team\dashboard\dashboard\obj\Debug\dashboard.Properties.Resources.resources
 D:\learngit\24Team\dashboard\dashboard\obj\Debug\dashboard.csproj.GenerateResource.Cache
 D:\learngit\24Team\dashboard\dashboard\bin\Debug\dashboard.exe
 D:\learngit\24Team\dashboard\dashboard\bin\Debug\dashboard.pdb
+D:\learngit\24Team\dashboard\dashboard\obj\Debug\dashboard.boardForm.resources

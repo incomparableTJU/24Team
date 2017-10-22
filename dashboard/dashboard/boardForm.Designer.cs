@@ -3,7 +3,7 @@
 
 namespace dashboard
 {
-    partial class Form1
+    partial class boardForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -166,7 +166,7 @@ namespace dashboard
             this.label1.Text = "labels";
             
             // 
-            // Form1
+            // boardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,7 +175,7 @@ namespace dashboard
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.aGauge2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "boardForm";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();

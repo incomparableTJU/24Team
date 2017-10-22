@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace dashboard
 {
-    public partial class Form1 : Form
+    public partial class boardForm : Form
     {
         signal sig = new signal();
-        public Form1()
+        public boardForm()
         {
             InitializeComponent();
             string[] meaasge = { "si1", "si2", "si3" };
