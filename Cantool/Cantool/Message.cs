@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Cantool
 {
-    class Message
+    public class Message
     {
         public int messageId { get; set; }
         public string messageName { get; set; }
         public int DLC { get; set; }
         public string nodeNameECU { get; set; }
-        public string[] signals { get; set; }
+        public List<string> signals { get; set; }
 
         public Message()
         {
@@ -48,7 +48,7 @@ namespace Cantool
         public string toString()
         {
             string content = " MessageId:" + this.messageId + " MessageName:" + this.messageName + " DLC:" + this.DLC+ " MessagFromECU:" + this.nodeNameECU + "\n";
-            for (int i = 0; i < this.signals.Length; i++)
+            for (int i = 0; i < this.signals.Count(); i++)
             {
 
                 content += signals[i] + "\n";

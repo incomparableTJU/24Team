@@ -23,7 +23,7 @@ namespace Cantool
             data = "";
         }
         //对Candata设置显示物理量和物理值的方法
-        public 
+        //public 
 
         public Candata getCandata(string line)
         {

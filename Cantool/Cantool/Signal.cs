@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Cantool
 {
-    class Signal
+    public class Signal
     {
         public string signal { get; set; }
         public string signalName { get; set; }
@@ -39,30 +40,33 @@ namespace Cantool
         }
 
         //将string解析到类Message中
-        public Signal getSignal(string line)
+        public static Signal getSignal(string line)
         {
-            //Signal s = new Signal();
-            this.signal = line;
+            Signal s = new Signal();
+            s.signal = line;
             string[] temp = line.Split(' ');
-            this.signalName = temp[2].Substring(4, temp[2].Length - 4);
+            string[] names = temp[2].Split('_');
+            s.signalName = names[1];
+            
+            MessageBox.Show(names[1]);
 
             string[] bit = temp[4].Split(new char[3] { '|', '@', '+' });
-            this.startBit = int.Parse(bit[0]);
-            this.bitLength = int.Parse(bit[1]);
-            this.bitStyle = int.Parse(bit[2]);
+            s.startBit = int.Parse(bit[0]);
+            s.bitLength = int.Parse(bit[1]);
+            s.bitStyle = int.Parse(bit[2]);
 
             string[] value = temp[5].Split(',');
-            this.A = double.Parse(value[0].Substring(1, value[0].Length - 1));
-            this.B = double.Parse(value[1].Substring(0, value[1].Length - 1));
+            s.A = double.Parse(value[0].Substring(1, value[0].Length - 1));
+            s.B = double.Parse(value[1].Substring(0, value[1].Length - 1));
 
             string[] range = temp[6].Split('|');
-            this.C = double.Parse(range[0].Substring(1, range[0].Length - 1));
-            this.D = double.Parse(range[1].Substring(0, range[1].Length - 1));
+            s.C = double.Parse(range[0].Substring(1, range[0].Length - 1));
+            s.D = double.Parse(range[1].Substring(0, range[1].Length - 1));
 
-            this.physicalUnit = temp[7].Substring(1, temp[7].Length - 2);
-            this.nodeNames = temp[9].Split(',');
+            s.physicalUnit = temp[7].Substring(1, temp[7].Length - 2);
+            s.nodeNames = temp[9].Split(',');
 
-            return this;
+            return s;
         }
     }
 }

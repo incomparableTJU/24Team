@@ -23,12 +23,12 @@ namespace Cantool
         {
             InitializeComponent();
         }
-        
+
         /**
          * save to *file
          * */
         private void button1_Click(object sender, EventArgs e)
-        {   
+        {
             SaveFileDialog fileDialog = new SaveFileDialog();
             fileDialog.RestoreDirectory = true;
             fileDialog.Title = "请选择文件";
@@ -45,7 +45,7 @@ namespace Cantool
                     FileStream fs = new FileStream(filename, System.IO.FileMode.Create, System.IO.FileAccess.Write);
                     //StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.Default);
                     StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
-                    for (int i = 0; i<database.Count();i++ )
+                    for (int i = 0; i < database.Count(); i++)
                         sw.WriteLine(database[i].toString());
                     sw.Close();
                     fs.Close();
@@ -87,9 +87,9 @@ namespace Cantool
                     xmlWriter.WriteAttributeString("name", database[i].messageName.ToString());
                     xmlWriter.WriteAttributeString("DLC", database[i].DLC.ToString());
                     xmlWriter.WriteAttributeString("fromECU", database[i].nodeNameECU.ToString());
-                    for (int j = 0; j < database[i].signals.Length; j++)
+                    for (int j = 0; j < database[i].signals.Count(); j++)
                     {
-                        if (database[i].signals[j]!=null)
+                        if (database[i].signals[j] != null)
                             xmlWriter.WriteElementString("Signal", database[i].signals[j]);
                     }
                     xmlWriter.WriteEndElement();
@@ -98,7 +98,7 @@ namespace Cantool
                 xmlWriter.WriteEndElement();
                 xmlWriter.WriteEndDocument();
                 xmlWriter.Close();
-            }   
+            }
             return true;
         }
 
@@ -107,7 +107,7 @@ namespace Cantool
          **/
         bool saveToJSON(String filename)
         {
-             // Object->Json
+            // Object->Json
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
             string json = null;
             //wirte into file
@@ -131,36 +131,37 @@ namespace Cantool
         {
             OpenFileDialog filename = new OpenFileDialog();
             //初始路径,这里设置的是程序的起始位置，可自由设置  
-            filename.InitialDirectory = Application.StartupPath; 
+            filename.InitialDirectory = Application.StartupPath;
             filename.Filter = "All files(*.*)|*.*|dbc files(*.dbc)|*.dbc";
             //文件类型的显示顺序（上一行.txt设为第二位）
-            filename.FilterIndex = 2;    
+            filename.FilterIndex = 2;
             filename.RestoreDirectory = true; //对话框记忆之前打开的目录
             //List<Message> database = new List<Message>();
             Message m = new Message();
             if (filename.ShowDialog() == DialogResult.OK)
             {
                 //获得完整路径在textBox1中显示
-                textBox1.Text = filename.FileName.ToString();  
+                textBox1.Text = filename.FileName.ToString();
                 StreamReader sr = new StreamReader(filename.FileName, Encoding.Default);
-                string outtemp = null,intemp = null;
+                string outtemp = null, intemp = null;
                 outtemp = sr.ReadLine();
-                int iM = 1 ,iS = 1;//counter
-                while(outtemp!=null)
+                int iM = 1, iS = 1;//counter
+                while (outtemp != null)
                 {
                     if (outtemp.Contains("BO_"))
                     {
                         iS = 1;//redefine
                         m.getMessage(outtemp);
-                        textBox2.AppendText(iM.ToString()+" MessageId:"+m.messageId +" MessageName:"+m.messageName+" MessagFromECU："+m.nodeNameECU+ "\r\n");
+                        textBox2.AppendText("\r\n");
+                        textBox2.AppendText(iM.ToString() + " MessageId:" + m.messageId + " MessageName:" + m.messageName + " MessagFromECU：" + m.nodeNameECU + "\r\n");
                         iM++;
-                        m.signals = new string[30];
+                        m.signals = new List<string>();
                         intemp = sr.ReadLine();
-                        while (intemp!=null && intemp.Contains("SG_"))
+                        while (intemp != null && intemp.Contains("SG_"))
                         {
-                            textBox2.AppendText(iS.ToString()+" "+intemp + "\r\n");
+                            textBox2.AppendText("  "+iS.ToString() + " " + intemp + "\r\n");
                             //将signal add到message中
-                            m.signals[iS-1] = intemp;
+                            m.signals.Add(intemp);
                             iS++;
                             //getSignal(intemp);
                             intemp = sr.ReadLine();
@@ -172,17 +173,14 @@ namespace Cantool
                 }
                 sr.Close();
 
-            }  
+            }
         }
 
-        
 
-        
-
-        
-
-        
-
+        public List<Message> getDatabase()
+        {
+            return database;
+        }
 
     }
 }
