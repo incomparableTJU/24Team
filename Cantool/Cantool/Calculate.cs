@@ -1,23 +1,177 @@
-﻿using System;
+﻿using Cantool;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Cantool
 {
     class Calculate
     {
         //解析
-        public static List<string> Decode(string line)
+        public  Dictionary<string, string> Decode(string line)
         {
-            List<string> list = new List<string>();
+            
+            Dictionary<string, string> dic = new Dictionary<string, string>();
             Candata can = new Candata();
             can.getCandata(line);
             string mid = can.id_16;
             string data = can.data;
+            //返回的二进制数据
+            string dealdata = storage(data); 
+            dic = decode(mid,dealdata);
+            //MessageBox.Show(dic.Count().ToString());
+            //dic的size为0
+           // foreach (KeyValuePair<string, string> kvp in dic)
+          //      MessageBox.Show(kvp.Key + " 的物理值为：" + kvp.Value);
+            return dic;
+        }
 
-            return list;
+        public static Dictionary<string,string> decode(string mid, string data)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            //把十进制转换成16进制
+            FileSaver fs = new FileSaver();
+            List<Message> list = new List<Message>();
+            list = fs.getDatabase();
+            MessageBox.Show(list.Count().ToString());
+            foreach (Message m in fs.database)
+            {
+                //程序没运行到这里
+                MessageBox.Show("!!");
+                if(m.messageId.ToString("x8") == mid)
+                {
+                    MessageBox.Show(mid);
+                    Signal signal = new Signal();
+                    foreach(string str in m.signals)
+                    {
+                        signal = Signal.getSignal(str);
+                        string A = signal.A.ToString();
+                        string B = signal.B.ToString();
+                        string C = signal.C.ToString();
+                        string D = signal.D.ToString();
+                        string qdata = wget(data, A, B);
+                        float x = float.Parse(qdata);
+                        float phy = float.Parse(A) * x + float.Parse(B);
+                        dic.Add(signal.signalName, phy.ToString());
+                       // MessageBox.Show(signal.signalName + " 的物理值为： " + phy);
+                    }
+                }
+            }
+            return dic;
+        }
+
+
+        public static string wget(string data, string from, string number)
+        {
+            int f = int.Parse(from);
+            int n = int.Parse(number);
+            int t = f / 8;
+            string temp = "";
+            string[] b = new string[64];
+            for (int i = 0; i < 64; i++)
+            {
+                b[i] = data.Substring(i, 1);
+            }
+            if (f - (t * 8) + 1 >= n)
+            {
+                for (int i = f; i > f - n; i--)
+                {
+                    temp += b[i];
+                }
+            }
+            else if (f - (t * 8) + 1 < n)
+            {
+                int f_1 = f;
+                while (n > 8)
+                {
+                    for (int i = f_1; i >= t * 8; i--)
+                    {
+                        temp += b[i];
+                    }
+                    n -= f_1 - (t * 8) + 1;
+                    f_1 = (t + 2) * 8 - 1;
+                    t++;
+                }
+                for (int i = f_1; i > f_1 - n; i--)
+                {
+                    temp += b[i];
+                }
+            }
+            return temp;
+        }
+
+        public static string storage(string data)
+        {
+            string[] st = new string[8];
+            string[] a = new string[64];
+            string[] b = new string[64];
+            string dis = "";
+            //将16进制data转换成2进制数
+
+            string two_data = deal16(data);
+            //List<string> list = new List<string>();
+
+            for (int i = 0; i < 64; i++)
+            {
+                //st[i] = two_data.Substring(i*8,8);
+                a[i] = two_data.Substring(i, 1);
+            }
+            for (int i = 0; i <= 7; i++)
+            {
+                for (int j = 0; j <= 7; j++)
+                {
+                    b[i * 8 + 7 - j] = a[i * 8 + j];
+                }
+            }
+            for (int i = 0; i < 64; i++)
+            {
+                dis += b[i];
+            }
+            //MessageBox.Show(two_data + "\r\n" +two_data.Length +"\r\n" + dis);
+            return dis;
+        }
+
+        public static string deal16(string id)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("0", "0000");
+            dic.Add("1", "0001");
+            dic.Add("2", "0010");
+            dic.Add("3", "0011");
+            dic.Add("4", "0100");
+            dic.Add("5", "0101");
+            dic.Add("6", "0110");
+            dic.Add("7", "0111");
+            dic.Add("8", "1000");
+            dic.Add("9", "1001");
+            dic.Add("a", "1010");
+            dic.Add("b", "1011");
+            dic.Add("c", "1100");
+            dic.Add("d", "1101");
+            dic.Add("e", "1110");
+            dic.Add("f", "1111");
+            dic.Add("A", "1010");
+            dic.Add("B", "1011");
+            dic.Add("C", "1100");
+            dic.Add("D", "1101");
+            dic.Add("E", "1110");
+            dic.Add("F", "1111");
+            string[] aaa = new string[16];
+            string result = "";
+
+            for (int i = 0; i < 16; i++)
+            {
+                if (dic.ContainsKey(id.Substring(i, 1)))
+                {
+                    string temp = id.Substring(i, 1);
+                    result += dic[temp];
+                }
+            }
+
+            return result;
         }
         //设置
         public static string Put()

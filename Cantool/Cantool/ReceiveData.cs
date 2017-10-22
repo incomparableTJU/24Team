@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cantool;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,11 +51,21 @@ namespace Set_Com
             byte[] ReDatas = new byte[comDevice.BytesToRead];
             comDevice.Read(ReDatas, 0, ReDatas.Length);
             String sdata = new ASCIIEncoding().GetString(ReDatas);
-
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            Calculate cal = new Calculate();
             this.AddData(ReDatas);
+            dic = cal.Decode(sdata);
+            //dic长度为0
+            //MessageBox.Show(dic.Count().ToString());
 
+            /*
+                string temp = "\r\n this is here!";
+                //string temp = "\r\n" + d.Key + " 的物理值为： " + d.Value;
+                byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(temp);
+                this.AddData(byteArray);
+            */
         }
-        
+
 
         public void AddData(byte[] data)
         {

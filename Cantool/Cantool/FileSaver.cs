@@ -17,7 +17,7 @@ namespace Cantool
     public partial class FileSaver : Form
     {
         Object content = "abcdefg"; //test
-        List<Message> database = new List<Message>();
+        public List<Message> database = new List<Message>();
 
         public FileSaver()
         {
@@ -174,6 +174,7 @@ namespace Cantool
                 sr.Close();
 
             }
+            
         }
 
 

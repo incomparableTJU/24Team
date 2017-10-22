@@ -98,7 +98,7 @@ BO_ 864 HVAC_4: 8 ACP
  SG_ HVAC_Checksum : 39|8@0+ (1,0) [155|255] ""  PTC
 BO_ 867 ACP_1: 8 ACP
  SG_ ACP_Speed : 6|7@0+ (100,0) [0|8600] ""  HVAC
- SG_ ACP_ComsumpPwr : 15|10@0+ (10,0) [0|8000] ""  HVAC
+ SG_ ACPComsumpPwr : 15|10@0+ (10,0) [0|8000] ""  HVAC
  SG_ ACP_Current : 16|9@0+ (0.1,0) [0|51] ""  HVAC
  SG_ ACP_MotorTemp : 39|8@0+ (1,-40) [-40|140] ""  HVAC
  SG_ ACP_HearBeat : 55|4@0+ (1,0) [0|15] ""  HVAC
@@ -111,5 +111,5 @@ BO_ 868 PTC_1: 8 PTC
  SG_ PTC_VoltageFault : 2|1@0+ (1,0) [0|1] ""  HVAC
  SG_ PTC_InternalError : 1|2@0+ (1,0) [0|3] ""  HVAC
  SG_ PTC_Current : 15|8@0+ (0.2,0) [0|25.4] "A"  HVAC
- SG_ PTC_PwrAct : 23|10@0+ (10,0) [0|8000] "w"  HVAC
- SG_ PTC_Actst : 26|3@0+ (1,0) [0|7] ""  HVAC
+ SG_ PTCPwrAct : 23|10@0+ (10,0) [0|8000] "w"  HVAC
+ SG_ PTCActst : 26|3@0+ (1,0) [0|7] ""  HVAC
