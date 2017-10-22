@@ -132,7 +132,7 @@ namespace curvepaint
             }
             for (int i = 0; i < num; i++)
             {
-               
+              
                 foreach (int elements in val)     
                 dataQueue.Enqueue(elements);
                }          
@@ -143,6 +143,7 @@ namespace curvepaint
             {
                 if (comboBox1.SelectedIndex == i)
                 {
+                    
                     current = comboBox1.Text.ToString();
                     MessageBox.Show("显示的是" + current);
                 }

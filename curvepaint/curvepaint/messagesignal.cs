@@ -25,7 +25,7 @@ namespace curvepaint
             {
                 messagesignal singlesig = new messagesignal();
                 singlesig.name = name[i];
-                singlesig.value = val[i];
+                singlesig.value = val[i];  
 
                 signallist.Add(singlesig);
             }
