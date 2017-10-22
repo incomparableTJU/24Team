@@ -19,7 +19,7 @@ namespace curvepaint
         private int num = 10;//每次删除增加几个点
         List<float> val = new List<float>();
         List<string> signalname = new List<string>();
-        signal sig = new signal();
+        messagesignal sig = new messagesignal();
         string current;//当前选择的名字
         public  curveForm()
         {
