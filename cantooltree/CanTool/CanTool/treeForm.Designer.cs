@@ -1,6 +1,6 @@
 ﻿namespace CanTool
 {
-    partial class Form1
+    partial class treeForm
     {
         /// <summary>
         /// 必需的设计器变量。

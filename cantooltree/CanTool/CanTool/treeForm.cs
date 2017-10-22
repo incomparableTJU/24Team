@@ -12,10 +12,10 @@ using System.Runtime.InteropServices;
 
 namespace CanTool
 {
-    public partial class Form1 : Form
+    public partial class treeForm : Form
     {
         private DataTable _dtEmployees;
-        public Form1()
+        public treeForm()
         {
             InitializeComponent();
         }
