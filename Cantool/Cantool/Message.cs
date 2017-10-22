@@ -38,6 +38,13 @@ namespace Cantool
             return this;
         }
 
+        //根据id找到该id对应的signal数组或者列表   最好能用list
+        public List<string> findSignal(string id)
+        {
+            return new List<string>();
+        }
+
+
         public string toString()
         {
             string content = " MessageId:" + this.messageId + " MessageName:" + this.messageName + " DLC:" + this.DLC+ " MessagFromECU:" + this.nodeNameECU + "\n";

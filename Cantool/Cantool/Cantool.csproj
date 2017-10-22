@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculate.cs" />
+    <Compile Include="Candata.cs" />
     <Compile Include="CanMessageLayout.cs">
       <SubType>Form</SubType>
     </Compile>
