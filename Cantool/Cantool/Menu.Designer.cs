@@ -150,17 +150,17 @@
             // 
             // 树状结构图ToolStripMenuItem
             // 
-            this.树状结构图ToolStripMenuItem.Name = "文件存储ToolStripMenuItem";
+            this.树状结构图ToolStripMenuItem.Name = "树状结构图ToolStripMenuItem";
             this.树状结构图ToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
             this.树状结构图ToolStripMenuItem.Text = "文件存储";
-            this.树状结构图ToolStripMenuItem.Click += new System.EventHandler(this.文件存储ToolStripMenuItem_Click);
+            this.树状结构图ToolStripMenuItem.Click += new System.EventHandler(this.树状结构图ToolStripMenuItem_Click);
             // 
             // 文件存储ToolStripMenuItem
             // 
-            this.文件存储ToolStripMenuItem.Name = "树状结构图ToolStripMenuItem";
+            this.文件存储ToolStripMenuItem.Name = "文件存储ToolStripMenuItem";
             this.文件存储ToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
             this.文件存储ToolStripMenuItem.Text = "树状结构图";
-            this.文件存储ToolStripMenuItem.Click += new System.EventHandler(this.树状结构图ToolStripMenuItem_Click);
+            this.文件存储ToolStripMenuItem.Click += new System.EventHandler(this.文件存储ToolStripMenuItem_Click);
             // 
             // can信息布局ToolStripMenuItem1
             // 
@@ -189,6 +189,7 @@
             this.实时曲线ToolStripMenuItem1.Name = "实时曲线ToolStripMenuItem1";
             this.实时曲线ToolStripMenuItem1.Size = new System.Drawing.Size(184, 36);
             this.实时曲线ToolStripMenuItem1.Text = "实时曲线";
+            this.实时曲线ToolStripMenuItem1.Click += new System.EventHandler(this.实时曲线ToolStripMenuItem1_Click);
             // 
             // 设置ToolStripMenuItem1
             // 
@@ -315,6 +316,7 @@
             this.PerformLayout();
 
         }
+
 
         #endregion
 
