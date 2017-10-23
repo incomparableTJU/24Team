@@ -1,0 +1,38 @@
+//键值对：key物理量 value物理值
+            float x = 0;
+            Signal signal = new Signal();
+            string A = signal.A.ToString();
+            string B = signal.B.ToString();
+            string[] b = new string[64];
+            string templen = "";
+            //给64个位依次赋值
+            for (int i = 0; i < 64; i++)
+            {
+                b[i] = "0";
+            }
+            foreach (KeyValuePair<string,string> kv in dic)
+            {
+                //得到十进制的x
+                x = (float.Parse(kv.Value) - float.Parse(B)) / float.Parse(A);
+                //将十进制的x变成二进制
+                string x2 = Convert.ToString((int)x,2);
+                //获取要设置几位   此时的signal没有值
+                string len = signal.bitLength.ToString();
+                string newlen = x2.Substring(0, int.Parse(len));
+                string from = signal.startBit.ToString();
+                //把数据放到数组里
+                
+                for(int i = 0; i < newlen.Length; i++)
+                {
+                    int n = int.Parse(from) / 8;
+                    int t = int.Parse(from) % 8;
+                    b[8 * n + 7 - t] = newlen.Substring(0, 1);
+                    t--;
+                }
+                
+                for(int i = 0; i < 64; i++)
+                {
+                    templen += b[i];
+                }
+            }
+            return templen;
