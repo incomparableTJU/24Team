@@ -171,6 +171,8 @@ namespace Cantool
                     m = new Message();
                     outtemp = intemp;
                 }
+                Calculate cal = new Calculate();
+                cal.loadData(database);
                 sr.Close();
 
             }

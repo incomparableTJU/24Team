@@ -52,7 +52,6 @@ C:\Users\zk\Desktop\te\24Team-master\Cantool\Cantool\obj\Debug\Cantool.csproj.Ge
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\bin\Debug\Cantool.exe
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\bin\Debug\Cantool.pdb
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.CanMessageLayout.resources
-\\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.CurveForm.resources
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.FileSaver.resources
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.Form1.resources
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.Menu.resources
@@ -61,3 +60,17 @@ C:\Users\zk\Desktop\te\24Team-master\Cantool\Cantool\obj\Debug\Cantool.csproj.Ge
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.csproj.GenerateResource.Cache
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.exe
 \\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.pdb
+\\vmware-host\Shared Folders\共享吧\Cantool\Cantool\obj\Debug\Cantool.csprojResolveAssemblyReference.cache
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\bin\Debug\Cantool.exe.config
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.exe
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.pdb
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\bin\Debug\Cantool.exe
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\bin\Debug\Cantool.pdb
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.csprojResolveAssemblyReference.cache
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.CanMessageLayout.resources
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.FileSaver.resources
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.Form1.resources
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.Menu.resources
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.Properties.Resources.resources
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.ReceiveData.resources
+C:\Users\zk\Desktop\新建文件夹\24Team-master\Cantool\Cantool\obj\Debug\Cantool.csproj.GenerateResource.Cache

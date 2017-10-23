@@ -10,53 +10,60 @@ namespace Cantool
 {
     class Calculate
     {
+        public static List<Message> database = new List<Message>();
         //解析
-        public  Dictionary<string, string> Decode(string line)
+        public void loadData(List<Message> db)
         {
-            
+            database = db;
+        }
+        public Dictionary<string, string> Decode(string line)
+        {
+
             Dictionary<string, string> dic = new Dictionary<string, string>();
             Candata can = new Candata();
             can.getCandata(line);
             string mid = can.id_16;
             string data = can.data;
             //返回的二进制数据
-            string dealdata = storage(data); 
-            dic = decode(mid,dealdata);
+            string dealdata = storage(data);
+            dic = decode(mid, dealdata);
             //MessageBox.Show(dic.Count().ToString());
             //dic的size为0
-           // foreach (KeyValuePair<string, string> kvp in dic)
-          //      MessageBox.Show(kvp.Key + " 的物理值为：" + kvp.Value);
+            // foreach (KeyValuePair<string, string> kvp in dic)
+            //      MessageBox.Show(kvp.Key + " 的物理值为：" + kvp.Value);
             return dic;
         }
 
-        public static Dictionary<string,string> decode(string mid, string data)
+        public static Dictionary<string, string> decode(string mid, string data)
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
             //把十进制转换成16进制
-            FileSaver fs = new FileSaver();
-            List<Message> list = new List<Message>();
-            list = fs.getDatabase();
-            MessageBox.Show(list.Count().ToString());
-            foreach (Message m in fs.database)
+
+            // MessageBox.Show(database.Count().ToString());
+            foreach (Message m in database)
             {
                 //程序没运行到这里
-                MessageBox.Show("!!");
-                if(m.messageId.ToString("x8") == mid)
+
+                if (m.messageId.ToString("x8").TrimStart('0') == mid)
                 {
-                    MessageBox.Show(mid);
+                    //MessageBox.Show("message id is : " + mid);
                     Signal signal = new Signal();
-                    foreach(string str in m.signals)
+                    foreach (string str in m.signals)
                     {
                         signal = Signal.getSignal(str);
                         string A = signal.A.ToString();
                         string B = signal.B.ToString();
                         string C = signal.C.ToString();
                         string D = signal.D.ToString();
-                        string qdata = wget(data, A, B);
+                        string startBit = signal.startBit.ToString();
+                        string len = signal.bitLength.ToString();
+                        string qdata = wget(data, startBit, len);
+                        //qdata is null
+                        // MessageBox.Show("qdata is : "+qdata);
                         float x = float.Parse(qdata);
                         float phy = float.Parse(A) * x + float.Parse(B);
                         dic.Add(signal.signalName, phy.ToString());
-                       // MessageBox.Show(signal.signalName + " 的物理值为： " + phy);
+                        //MessageBox.Show(signal.signalName + " 的物理值为： " + phy);
                     }
                 }
             }
@@ -66,15 +73,18 @@ namespace Cantool
 
         public static string wget(string data, string from, string number)
         {
+            // MessageBox.Show("data is : " + data + "from and number are : " + from + " " + number);
             int f = int.Parse(from);
             int n = int.Parse(number);
             int t = f / 8;
             string temp = "";
             string[] b = new string[64];
+            //给64个位依次赋值
             for (int i = 0; i < 64; i++)
             {
                 b[i] = data.Substring(i, 1);
             }
+            //
             if (f - (t * 8) + 1 >= n)
             {
                 for (int i = f; i > f - n; i--)
@@ -100,6 +110,7 @@ namespace Cantool
                     temp += b[i];
                 }
             }
+            // MessageBox.Show("temp is : " + temp);
             return temp;
         }
 
