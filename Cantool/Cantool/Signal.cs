@@ -46,7 +46,7 @@ namespace Cantool
             s.signal = line;
             string[] temp = line.Split(' ');
             string[] names = temp[2].Split('_');
-            s.signalName = names[1];
+            s.signalName = temp[2];
             
             //MessageBox.Show(names[1]);
 

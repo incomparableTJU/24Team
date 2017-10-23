@@ -60,9 +60,21 @@ namespace Cantool
                         string qdata = wget(data, startBit, len);
                         //qdata is null
                         // MessageBox.Show("qdata is : "+qdata);
-                        float x = float.Parse(qdata);
+                        float qdata10 = Convert.ToInt32(qdata, 2);
+                        float x = qdata10;
                         float phy = float.Parse(A) * x + float.Parse(B);
-                        dic.Add(signal.signalName, phy.ToString());
+                        float temp_phy = 0f;
+                        if(phy > float.Parse(D))
+                        {
+                            temp_phy = phy;
+                        }else if(phy < float.Parse(C))
+                        {
+                            temp_phy = phy;
+                        }else
+                        {
+                            temp_phy = phy;
+                        }
+                        dic.Add(signal.signalName, temp_phy.ToString());
                         //MessageBox.Show(signal.signalName + " 的物理值为： " + phy);
                     }
                 }

@@ -36,8 +36,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Extensions.Design" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,12 +55,6 @@
       <DependentUpon>CanMessageLayout.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateTreeViewFormTable.cs" />
-    <Compile Include="curveForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="curveForm.Designer.cs">
-      <DependentUpon>curveForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,7 +72,6 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="messagesignal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiveData.cs">
@@ -94,9 +85,6 @@
     <Compile Include="treeForm.Designer.cs" />
     <EmbeddedResource Include="CanMessageLayout.resx">
       <DependentUpon>CanMessageLayout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="curveForm.resx">
-      <DependentUpon>curveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FileSaver.resx">
       <DependentUpon>FileSaver.cs</DependentUpon>

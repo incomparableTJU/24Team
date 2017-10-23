@@ -20,7 +20,7 @@ namespace Cantool
             InitializeComponent();
         }
 
-        private void 树状结构图ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 文件存储ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             //hide the last panel and add new panel
@@ -87,7 +87,7 @@ namespace Cantool
             layout.Show();
         }
 
-        private void 文件存储ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 树状结构图ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //hide the last panel and add new panel
             this.panel.Controls.Clear();
@@ -105,25 +105,5 @@ namespace Cantool
             this.panel.Controls.Add(treeform);
             treeform.Show();
         }
-
-        
-         private void 实时曲线ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            //hide the last panel and add new panel
-            this.panel.Controls.Clear();
-            this.homePage.Visible = false;
-            this.panel.Visible = true;
-
-            //set the attribution
-            CurveForm curveform = new CurveForm();
-
-            curveform.TopLevel = false;
-            curveform.Dock = System.Windows.Forms.DockStyle.Fill;
-            curveform.FormBorderStyle = FormBorderStyle.None;
-
-            this.panel.Controls.Add(curveform);
-            curveform.Show();
-        }
-        
     }
 }
