@@ -22,6 +22,7 @@ namespace Cantool
 
         private void 文件存储ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             //hide the last panel and add new panel
             this.panel.Controls.Clear();
             this.homePage.Visible = false;
@@ -84,6 +85,25 @@ namespace Cantool
 
             this.panel.Controls.Add(layout);
             layout.Show();
+        }
+
+        private void 树状结构图ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //hide the last panel and add new panel
+            this.panel.Controls.Clear();
+            this.homePage.Visible = false;
+            this.panel.Visible = true;
+
+            //set the attribution
+            TreeForm treeform = new TreeForm();
+            treeform.loadData(database);
+
+            treeform.TopLevel = false;
+            treeform.Dock = System.Windows.Forms.DockStyle.Fill;
+            treeform.FormBorderStyle = FormBorderStyle.None;
+
+            this.panel.Controls.Add(treeform);
+            treeform.Show();
         }
     }
 }

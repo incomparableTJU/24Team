@@ -54,6 +54,7 @@
     <Compile Include="CanMessageLayout.Designer.cs">
       <DependentUpon>CanMessageLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateTreeViewFormTable.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,10 @@
     </Compile>
     <Compile Include="ReceiveData.Designer.cs" />
     <Compile Include="Signal.cs" />
+    <Compile Include="treeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="treeForm.Designer.cs" />
     <EmbeddedResource Include="CanMessageLayout.resx">
       <DependentUpon>CanMessageLayout.cs</DependentUpon>
     </EmbeddedResource>

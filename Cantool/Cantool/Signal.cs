@@ -48,7 +48,7 @@ namespace Cantool
             string[] names = temp[2].Split('_');
             s.signalName = names[1];
             
-            MessageBox.Show(names[1]);
+            //MessageBox.Show(names[1]);
 
             string[] bit = temp[4].Split(new char[3] { '|', '@', '+' });
             s.startBit = int.Parse(bit[0]);
