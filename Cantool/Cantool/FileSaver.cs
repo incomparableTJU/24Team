@@ -174,7 +174,12 @@ namespace Cantool
                 Calculate cal = new Calculate();
                 cal.loadData(database);
                 sr.Close();
-
+                Dictionary<string, string> d = new Dictionary<string, string>();
+                string temp_id = "856";
+                d.Add("CDU_HVACOffButtonSt", "20");
+                d.Add("CDU_HVACOffButtonStVD", "30");
+                d.Add("CDU_HVACCtrlModeSt", "100");
+                cal.Put(temp_id, d);
             }
             
         }
