@@ -84,7 +84,7 @@ namespace Set_Com
                 List<MySqlParameter> Paramter = new List<MySqlParameter>();
                 Paramter.Add(new MySqlParameter("?signal_name", kv.Key));
                 Paramter.Add(new MySqlParameter("?signal_value", kv.Value));
-                Paramter.Add(new MySqlParameter("?time", DateTime.Now.ToString()));
+                Paramter.Add(new MySqlParameter("?time", DateTime.Now.ToLocalTime().ToString()));
                 int insert = DbManager.Ins.ExecuteNonquery(sql, Paramter.ToArray());
                 byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(temp);
                 this.AddData(byteArray);
