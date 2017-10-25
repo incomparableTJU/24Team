@@ -39,7 +39,7 @@ namespace Set_Com
             this.set_com = set_com;
             if (set_com)
             {
-                this.comDevice = comDevice;
+                this.comDevice = Com.get_com();
                 //将com口的datarece事件绑定到Com_DataReceived函数中
                 comDevice.DataReceived += new SerialDataReceivedEventHandler(Com_DataReceived);
             }
@@ -54,6 +54,16 @@ namespace Set_Com
             comDevice.Read(ReDatas, 0, ReDatas.Length);
             
             String sdata = new ASCIIEncoding().GetString(ReDatas);
+            if (sdata == null || sdata.Trim() == "")
+            {
+                String current_data = Message_DataBase.get_current_data();
+                if (current_data != null)
+                {
+                    sdata = current_data;
+                }
+                return;
+            }
+            Message_DataBase.set_current_data(sdata);
             Dictionary<string, string> dic = new Dictionary<string, string>();
             Calculate cal = new Calculate();
             this.AddData(ReDatas);
@@ -75,13 +85,35 @@ namespace Set_Com
         {
             String sdata = new ASCIIEncoding().GetString(data);
             //tbx_receivedata.AppendText(sdata);
-            this.BeginInvoke(new MethodInvoker(delegate
+            if (this.IsHandleCreated)
             {
+                this.BeginInvoke(new MethodInvoker(delegate
+                {
 
-                tbx_receivedata.AppendText("\r\n");
-                //tbx_receivedata.Multiline = Enabled;
-                tbx_receivedata.AppendText(sdata);
-            }));
+                    tbx_receivedata.AppendText("\r\n");
+                    //tbx_receivedata.Multiline = Enabled;
+                    tbx_receivedata.AppendText(sdata);
+                }));
+            }
+                
         }
+
+        //private void InitializeComponent()
+        //{
+        //    this.SuspendLayout();
+        //    // 
+        //    // fm_receivedata
+        //    // 
+        //    this.ClientSize = new System.Drawing.Size(284, 262);
+        //    this.Name = "fm_receivedata";
+            
+        //    this.ResumeLayout(false);
+
+        //}
+
+        //private void fm_receivedata_Load(object sender, EventArgs e)
+        //{
+        //    this.Dispose(false);
+        //}
     }
 }

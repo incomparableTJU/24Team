@@ -276,11 +276,18 @@ namespace Cantool
                                 string startBit = signal.startBit.ToString();
                                 string len = signal.bitLength.ToString();
                                 //已获得当前signal 的全部信息
-
+                               // MessageBox.Show("str is " + str + " A is : " + A);
                                 //得到十进制的x
                                 x = (float.Parse(kv.Value) - float.Parse(B)) / float.Parse(A);
                                 //将十进制的x变成二进制
                                 string x2 = Convert.ToString((int)x, 2);
+                                if(x2.Length < int.Parse(len))
+                                {
+                                    while(x2.Length < int.Parse(len))
+                                    {
+                                        x2 += "0" + x2;
+                                    }
+                                }
                                 //获取要设置几位   此时的signal没有值
                                 //string len = signal.bitLength.ToString();
                                 string newlen = x2.Substring(0, int.Parse(len));
@@ -317,7 +324,7 @@ namespace Cantool
                 }
             }
             string result = "t" + t_id + "8" + temp16;
-            MessageBox.Show("result is : " + result);
+           // MessageBox.Show("result is : " + result);
             return result;
         }
     }

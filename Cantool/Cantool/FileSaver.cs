@@ -17,11 +17,13 @@ namespace Cantool
     public partial class FileSaver : Form
     {
         Object content = "abcdefg"; //test
+        
         public List<Message> database = new List<Message>();
 
         public FileSaver()
         {
             InitializeComponent();
+           
         }
 
         /**
@@ -171,15 +173,13 @@ namespace Cantool
                     m = new Message();
                     outtemp = intemp;
                 }
+
+                Message_DataBase.set_Message(database);
                 Calculate cal = new Calculate();
                 cal.loadData(database);
+               
                 sr.Close();
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                string temp_id = "856";
-                d.Add("CDU_HVACOffButtonSt", "20");
-                d.Add("CDU_HVACOffButtonStVD", "30");
-                d.Add("CDU_HVACCtrlModeSt", "100");
-                cal.Put(temp_id, d);
+
             }
             
         }

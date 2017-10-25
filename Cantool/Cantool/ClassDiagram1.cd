@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="dashboard.AGauge" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>6RiKidMAYGEAIQxW0VD5uCZG1Cbuqi0cCiXkiUA/A3A=</HashCode>
+      <FileName>AGauge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dashboard.boardForm" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAABAAAACAAAACABAAAAAAAAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Calculate" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAABAAAAAAAAAAAAEAABAAAACQAAAAQg=</HashCode>
+      <FileName>Calculate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Candata" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAICAAAAAAAAAAAEAAAAQABAAAAA=</HashCode>
+      <FileName>Candata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.CanMessageLayout" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>+AcAABAAADAAAABAAACAAAACABAAgAAAIAAggAAAAAA=</HashCode>
+      <FileName>CanMessageLayout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Com" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Com.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.CreateTreeViewFormTable" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CreateTreeViewFormTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.CurveForm" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIQAAKCAAGAkEAQYAACAIAACgAAAIAAIAAAAAAAAAAA=</HashCode>
+      <FileName>curveForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.FileSaver" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAAACAAABJAAACAACBCAAAIAAgQEEAAAEAAAEA=</HashCode>
+      <FileName>FileSaver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Menu" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ApwgAACAASAJIQBAAKCIAACSAAQYQBkgEAAAASIAAAE=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Message">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAgEAAAAAAABAAAAIAAAAAAAAAABBAgAAA=</HashCode>
+      <FileName>Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.messagesignal" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAABAAGACAAAAAAAAAAAAA=</HashCode>
+      <FileName>messagesignal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Program" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Signal" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAgCAAAAAAAAAAAAAAAAIAAAACAEAApAGAAEA=</HashCode>
+      <FileName>Signal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.TreeForm">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAABAAACAAAABAAACQEAACAAAEAAACEgAAAAAAAgA=</HashCode>
+      <FileName>treeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Set_Com.fm_set_Com" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAGAAQBAAAACAAJACQEEQAgAAgCAgAACAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Set_Com.fm_receivedata" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAKAAAAAAAgCAAAACAAAAAAACgAAAAAAAAAA=</HashCode>
+      <FileName>ReceiveData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cantool.Properties.Settings">
+    <Position X="2.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

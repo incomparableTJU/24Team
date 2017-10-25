@@ -197,6 +197,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            //this.Load += new System.EventHandler(this.fm_set_Com_Load);
 
         }
 

@@ -32,10 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=5.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\MySQL Connector Net 5.0.9\Binaries\.NET 2.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AGauge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AGauge.Designer.cs" />
+    <Compile Include="boardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="boardForm.Designer.cs" />
     <Compile Include="Calculate.cs" />
     <Compile Include="Candata.cs" />
     <Compile Include="CanMessageLayout.cs">
@@ -54,7 +68,15 @@
     <Compile Include="CanMessageLayout.Designer.cs">
       <DependentUpon>CanMessageLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Com.cs" />
     <Compile Include="CreateTreeViewFormTable.cs" />
+    <Compile Include="curveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="curveForm.Designer.cs">
+      <DependentUpon>curveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DbManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,19 +94,31 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="messagesignal.cs" />
+    <Compile Include="Message_DataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiveData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReceiveData.Designer.cs" />
+    <Compile Include="SendData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendData.Designer.cs">
+      <DependentUpon>SendData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Signal.cs" />
     <Compile Include="treeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="treeForm.Designer.cs" />
+    <EmbeddedResource Include="boardForm.resx" />
     <EmbeddedResource Include="CanMessageLayout.resx">
       <DependentUpon>CanMessageLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="curveForm.resx">
+      <DependentUpon>curveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FileSaver.resx">
       <DependentUpon>FileSaver.cs</DependentUpon>
@@ -103,6 +137,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ReceiveData.resx" />
+    <EmbeddedResource Include="SendData.resx">
+      <DependentUpon>SendData.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\Message.datasource" />
     <None Include="Properties\DataSources\Signal.datasource" />
     <None Include="Properties\Settings.settings">

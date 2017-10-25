@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cantool;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace Set_Com
         /// <summary>
         /// 创建私有串口资源
         /// </summary>
-        private SerialPort comDevice = new SerialPort();
+        private SerialPort comDevice = Com.get_com();
 
         /// <summary>
         /// 绑定波特率的数据
@@ -135,5 +136,23 @@ namespace Set_Com
             fm_receivedata f = new fm_receivedata(true, comDevice);
             f.Show();
         }
+
+        //private void InitializeComponent()
+        //{
+        //    this.SuspendLayout();
+        //    // 
+        //    // fm_set_Com
+        //    // 
+        //    this.ClientSize = new System.Drawing.Size(284, 262);
+        //    this.Name = "fm_set_Com";
+            
+        //    this.ResumeLayout(false);
+
+        //}
+
+        //private void fm_set_Com_Load(object sender, EventArgs e)
+        //{
+        //    this.Dispose(false);
+        //}
     }
 }

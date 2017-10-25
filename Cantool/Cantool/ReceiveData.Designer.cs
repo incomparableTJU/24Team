@@ -49,6 +49,7 @@
             this.Text = "接收数据";
             this.ResumeLayout(false);
             this.PerformLayout();
+            //this.Load += new System.EventHandler(this.fm_receivedata_Load);
 
         }
 
