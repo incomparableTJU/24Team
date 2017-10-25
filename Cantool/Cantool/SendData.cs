@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -129,7 +130,7 @@ namespace Cantool
             this.panel.Controls.Clear();
             //生成控件
             Point label_start = new Point(32, 15);//label的初始位置
-            Point tbx_start = new Point(184, 12);//textbox的初始位置
+            Point tbx_start = new Point(224, 12);//textbox的初始位置
 
             int count = 0;
             //循环生成控件
@@ -177,8 +178,38 @@ namespace Cantool
             //dic 和 message_ID 获得
             Calculate cal = new Calculate();
             string result = cal.Put(message_ID, dic);
+
+            SerialPort comDevice = Com.get_com();
+            byte[] sendData = null;
+            sendData = Encoding.ASCII.GetBytes(result.Trim());
+            this.SendData_(sendData, comDevice);
             MessageBox.Show("result is : " + result);
         }
+
+        private bool SendData_(byte[] data, SerialPort comDevice)
+        {
+            if (comDevice.IsOpen)
+            {
+                try
+                {
+                    comDevice.Write(data, 0, data.Length);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("串口未打开", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return false;
+        }
+
+
     }
 
     
