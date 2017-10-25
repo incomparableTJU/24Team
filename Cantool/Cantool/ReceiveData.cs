@@ -1,4 +1,6 @@
 ﻿using Cantool;
+using Cantool.DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,6 +77,15 @@ namespace Set_Com
             {
                 // string temp = "\r\n this is here!";
                 string temp = kv.Key + "\'s physical value is :" + kv.Value;
+
+                //向数据库中插入数据
+                DbManager.Ins.ConnStr = "server = localhost; user id = root; password = root; database = cantool";
+                string sql = @"INSERT into can_message(can_message.signal_name, can_message.signal_value,can_message.time) VALUES (?signal_name, ?signal_value, ?time)";
+                List<MySqlParameter> Paramter = new List<MySqlParameter>();
+                Paramter.Add(new MySqlParameter("?signal_name", kv.Key));
+                Paramter.Add(new MySqlParameter("?signal_value", kv.Value));
+                Paramter.Add(new MySqlParameter("?time", DateTime.Now.ToString()));
+                int insert = DbManager.Ins.ExecuteNonquery(sql, Paramter.ToArray());
                 byte[] byteArray = System.Text.Encoding.ASCII.GetBytes(temp);
                 this.AddData(byteArray);
             }
