@@ -171,7 +171,7 @@ namespace dashboard
             this.cbx_signal.FormattingEnabled = true;
             this.cbx_signal.Location = new System.Drawing.Point(139, 28);
             this.cbx_signal.Name = "cbx_signal";
-            this.cbx_signal.Size = new System.Drawing.Size(121, 20);
+            this.cbx_signal.Size = new System.Drawing.Size(181, 20);
             this.cbx_signal.TabIndex = 8;
             this.cbx_signal.SelectedIndexChanged += new System.EventHandler(this.cbx_signal_SelectedIndexChanged);
 

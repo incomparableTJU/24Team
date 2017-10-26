@@ -96,18 +96,20 @@ namespace dashboard
                                 //MessageBox.Show(selected_signal.C.ToString());
                                 //MessageBox.Show(selected_signal.D.ToString());
                                 this.aGauge2.MinValue = Convert.ToSingle(selected_signal.C);
+                                //取整数
+                                //间隔
+                                int space = (Convert.ToInt32(selected_signal.D + 10)) % 10;
                                 if (Convert.ToSingle(selected_signal.D) <= 2)
                                 {
                                     this.aGauge2.MaxValue  = 2;
                                 }
                                 else
                                 {
-                                    this.aGauge2.MaxValue = Convert.ToSingle(selected_signal.D);
+                                    this.aGauge2.MaxValue = Convert.ToSingle(selected_signal.D + 10 - space);
                                 }
-
                                 aGauge2.ScaleLinesMajorStepValue = (aGauge2.MaxValue - aGauge2.MinValue) / 10;
                                 this.aGauge2.Value = Convert.ToSingle(kv.Value);
-                                //this.label1.Text = kv.Value;
+                                this.label1.Text = kv.Value;
                                 break;
                             }
                             
@@ -161,9 +163,24 @@ namespace dashboard
         private void cbx_signal_SelectedIndexChanged(object sender, EventArgs e)
         {
             Signal selected_signal = (Signal)this.cbx_signal.SelectedItem;
+            this.aGauge2.MinValue = Convert.ToSingle(selected_signal.C);
+            //取整数
+            //间隔
+            int space = (Convert.ToInt32(selected_signal.D + 10)) % 10;
+            if (Convert.ToSingle(selected_signal.D) <= 2)
+            {
+                this.aGauge2.MaxValue = 2;
+            }
+            else
+            {
+                this.aGauge2.MaxValue = Convert.ToSingle(selected_signal.D + 10 - space);
+            }
+
+            aGauge2.ScaleLinesMajorStepValue = (aGauge2.MaxValue - aGauge2.MinValue) / 10;
             //从数据库中获取当前选中的signal的最新值，显示出来
             String signal_value = get_signal_value(selected_signal.signalName);
             this.aGauge2.Value = Convert.ToSingle(signal_value);
+            this.label1.Text = signal_value;
         }
 
         private String get_signal_value(String signalName)
