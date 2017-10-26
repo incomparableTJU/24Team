@@ -152,5 +152,41 @@ namespace Cantool
             SendData sendata = new SendData();
             sendata.Show();
         }
+
+        private void canTool装置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //hide the last panel and add new panel
+            this.panel.Controls.Clear();
+            this.homePage.Visible = false;
+            this.panel.Visible = true;
+
+            //set the attribution
+            SetCantool setCanTool = new SetCantool();
+
+            setCanTool.TopLevel = false;
+            setCanTool.Dock = System.Windows.Forms.DockStyle.Fill;
+            setCanTool.FormBorderStyle = FormBorderStyle.None;
+
+            this.panel.Controls.Add(setCanTool);
+            setCanTool.Show();
+        }
+
+        private void can总线通信参数ToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //hide the last panel and add new panel
+            this.panel.Controls.Clear();
+            this.homePage.Visible = false;
+            this.panel.Visible = true;
+
+            //set the attribution
+            SetVelocity setVelocity = new SetVelocity();
+
+            setVelocity.TopLevel = false;
+            setVelocity.Dock = System.Windows.Forms.DockStyle.Fill;
+            setVelocity.FormBorderStyle = FormBorderStyle.None;
+
+            this.panel.Controls.Add(setVelocity);
+            setVelocity.Show();
+        }
     }
 }

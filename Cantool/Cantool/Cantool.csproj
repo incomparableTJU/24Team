@@ -108,6 +108,14 @@
     <Compile Include="SendData.Designer.cs">
       <DependentUpon>SendData.cs</DependentUpon>
     </Compile>
+    <Compile Include="SetCantool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetCantool.Designer.cs" />
+    <Compile Include="SetVelocity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetVelocity.Designer.cs" />
     <Compile Include="Signal.cs" />
     <Compile Include="treeForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +148,8 @@
     <EmbeddedResource Include="SendData.resx">
       <DependentUpon>SendData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SetCantool.resx" />
+    <EmbeddedResource Include="SetVelocity.resx" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\Message.datasource" />
     <None Include="Properties\DataSources\Signal.datasource" />
