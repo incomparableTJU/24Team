@@ -38,6 +38,7 @@ namespace Cantool
             this.panel.Controls.Add(fileSaverForm);
             fileSaverForm.Show();
             this.database = fileSaverForm.getDatabase();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

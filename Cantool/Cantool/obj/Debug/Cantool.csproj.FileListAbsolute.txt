@@ -113,3 +113,20 @@ C:\Users\zk\Desktop\新建文件夹\Cantool\Cantool\obj\Debug\Cantool.csproj.Gen
 \\vmware-host\Shared Folders\共享吧\git\Cantool\Cantool\obj\Debug\Cantool.exe
 \\vmware-host\Shared Folders\共享吧\git\Cantool\Cantool\obj\Debug\Cantool.pdb
 \\vmware-host\Shared Folders\共享吧\git\Cantool\Cantool\obj\Debug\Cantool.csprojResolveAssemblyReference.cache
+D:\learngit\24Team\Cantool\Cantool\bin\Debug\Cantool.exe.config
+D:\learngit\24Team\Cantool\Cantool\bin\Debug\Cantool.exe
+D:\learngit\24Team\Cantool\Cantool\bin\Debug\Cantool.pdb
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.boardForm.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.CanMessageLayout.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.CurveForm.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.FileSaver.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.Form1.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.Menu.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.Properties.Resources.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.ReceiveData.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.SendData.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.SetCantool.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.SetVelocity.resources
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.csproj.GenerateResource.Cache
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.exe
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.pdb
