@@ -130,3 +130,4 @@ D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.SetVelocity.resources
 D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.csproj.GenerateResource.Cache
 D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.exe
 D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.pdb
+D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.csprojResolveAssemblyReference.cache
