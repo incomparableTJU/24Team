@@ -40,7 +40,7 @@
             this.cbbBaudRate = new System.Windows.Forms.ComboBox();
             this.cbbComList = new System.Windows.Forms.ComboBox();
             this.btn_ok = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -172,15 +172,7 @@
             this.btn_ok.Text = "确定";
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(351, 309);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
+            
             // 
             // fm_set_Com
             // 

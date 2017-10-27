@@ -109,6 +109,8 @@ namespace Set_Com
                     MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 btn_ok.Text = "关闭串口";
+                fm_receivedata f = new fm_receivedata(true, comDevice);
+                f.Show();
 
             }
             else
@@ -116,7 +118,6 @@ namespace Set_Com
                 try
                 {
                     comDevice.Close();
-                    btn_ok.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -133,8 +134,20 @@ namespace Set_Com
             cbbParity.Enabled = !comDevice.IsOpen;
             cbbStopBits.Enabled = !comDevice.IsOpen;
 
-            fm_receivedata f = new fm_receivedata(true, comDevice);
-            f.Show();
+           
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                comDevice.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         //private void InitializeComponent()
