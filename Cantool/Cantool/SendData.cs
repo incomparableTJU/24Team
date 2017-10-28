@@ -15,6 +15,7 @@ namespace Cantool
     public partial class SendData : Form
     {
         Dictionary<String, String> dic;
+        Boolean stopp;
         /// <summary>
         /// 绑定message数据
         /// </summary>
@@ -183,8 +184,40 @@ namespace Cantool
 
             byte[] sendData = null;
             sendData = Encoding.ASCII.GetBytes(result.Trim());
-            this.SendData_(sendData, comDevice);
-            MessageBox.Show("result is : " + result);
+            stopp = false;
+            if(cycle.Text == null || cycle.Text == "")
+            {
+                this.SendData_(sendData, comDevice);
+            }else
+            {
+                try
+                {
+                    if (int.Parse(cycle.Text) < 0 || int.Parse(cycle.Text) >= 65535)
+                    {
+                        MessageBox.Show("不符合的类型！");
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+
+                int data10 = int.Parse(cycle.Text);
+                
+                string data16 = data10.ToString("x8").TrimStart('0');
+                
+                int len = data16.Length;
+                for(int i =0; i < 4-len; i++)
+                {
+                    data16 = "0" + data16;
+                }
+                
+                byte[] byteArray = System.Text.Encoding.Default.GetBytes(data16);
+                sendData = sendData.Concat(byteArray).ToArray();
+                this.SendData_(sendData, comDevice);    
+            }
+            
+            //MessageBox.Show("result is : " + result);
         }
 
         private bool SendData_(byte[] data, SerialPort comDevice)
@@ -210,7 +243,10 @@ namespace Cantool
             return false;
         }
 
-
+        private void stop_Click(object sender, EventArgs e)
+        {
+            this.stopp = true;
+        }
     }
 
     

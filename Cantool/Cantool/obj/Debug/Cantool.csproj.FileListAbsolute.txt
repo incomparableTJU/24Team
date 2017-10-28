@@ -131,3 +131,8 @@ D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.csproj.GenerateResource.Cac
 D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.exe
 D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.pdb
 D:\learngit\24Team\Cantool\Cantool\obj\Debug\Cantool.csprojResolveAssemblyReference.cache
+C:\Users\zk\Desktop\te\24Team-master\Cantool\Cantool\obj\Debug\Cantool.boardForm.resources
+C:\Users\zk\Desktop\te\24Team-master\Cantool\Cantool\obj\Debug\Cantool.CurveForm.resources
+C:\Users\zk\Desktop\te\24Team-master\Cantool\Cantool\obj\Debug\Cantool.SendData.resources
+C:\Users\zk\Desktop\te\24Team-master\Cantool\Cantool\obj\Debug\Cantool.SetCantool.resources
+C:\Users\zk\Desktop\te\24Team-master\Cantool\Cantool\obj\Debug\Cantool.SetVelocity.resources

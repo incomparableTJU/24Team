@@ -25,8 +25,13 @@ namespace Cantool
             string mid = can.id_16;
             string data = can.data;
             //返回的二进制数据
-            string dealdata = storage(data);
-            dic = decode(mid, dealdata);
+
+
+            //motorola
+            //string dealdata = mstorage(data);
+            //intel
+            string messagename = findname(mid);
+            dic = decode(mid, data);
             //MessageBox.Show(dic.Count().ToString());
             //dic的size为0
             // foreach (KeyValuePair<string, string> kvp in dic)
@@ -34,8 +39,31 @@ namespace Cantool
             return dic;
         }
 
+        public static string findname(string mid)
+        {
+            string name = "";
+            foreach(Message m in database)
+            {
+                string temp_id = m.messageId.ToString("x8").TrimStart('0');
+                if (temp_id.Length != 3)
+                {
+                    while (temp_id.Length != 3)
+                    {
+                        temp_id = "0" + temp_id;
+                    }
+                }
+                if(temp_id == mid)
+                {
+                    name = m.messageName;
+                    break;
+                }
+            }
+            return name;
+        }
+
         public static Dictionary<string, string> decode(string mid, string data)
         {
+            //未转换的data 
             Dictionary<string, string> dic = new Dictionary<string, string>();
             //把十进制转换成16进制
 
@@ -62,8 +90,19 @@ namespace Cantool
                         string C = signal.C.ToString();
                         string D = signal.D.ToString();
                         string startBit = signal.startBit.ToString();
+                        int bitstyle = signal.bitStyle;
                         string len = signal.bitLength.ToString();
-                        string qdata = wget(data, startBit, len);
+                        //需要进行判断
+                        string dealdata = "";
+                        if (bitstyle == 0)
+                        {
+                            dealdata = mstorage(data);
+                        }
+                        else if (bitstyle == 1)
+                        {
+                            dealdata = istorage(data);
+                        }
+                        string qdata = wget(dealdata, startBit, len);
                         //qdata is null
                         // MessageBox.Show("qdata is : "+qdata);
                         float qdata10 = Convert.ToInt32(qdata, 2);
@@ -133,8 +172,39 @@ namespace Cantool
             // MessageBox.Show("temp is : " + temp);
             return temp;
         }
+        public static string istorage(string data)
+        {
+            string[] st = new string[8];
+            string[] a = new string[64];
+            string[] b = new string[64];
+            string dis = "";
+            //将16进制data转换成2进制数
 
-        public static string storage(string data)
+            string two_data = deal16(data);
+            //List<string> list = new List<string>();
+
+            for (int i = 0; i < 64; i++)
+            {
+                //st[i] = two_data.Substring(i*8,8);
+                a[i] = two_data.Substring(i, 1);
+            }
+            for (int i = 0; i <= 7; i++)
+            {
+                for (int j = 0; j <= 7; j++)
+                {
+                    b[i * 8 + j] = a[i * 8 + j];
+                }
+            }
+            for (int i = 0; i < 64; i++)
+            {
+                dis += b[i];
+            }
+            //MessageBox.Show(two_data + "\r\n" +two_data.Length +"\r\n" + dis);
+            return dis;
+        }
+
+
+        public static string mstorage(string data)
         {
             string[] st = new string[8];
             string[] a = new string[64];
@@ -276,14 +346,14 @@ namespace Cantool
                                 string startBit = signal.startBit.ToString();
                                 string len = signal.bitLength.ToString();
                                 //已获得当前signal 的全部信息
-                               // MessageBox.Show("str is " + str + " A is : " + A);
-                                //得到十进制的x
+                                // MessageBox.Show("str is " + str + " A is : " + A);
+                                //得到十进制的x,用户输入的值的变形
                                 x = (float.Parse(kv.Value) - float.Parse(B)) / float.Parse(A);
                                 //将十进制的x变成二进制
                                 string x2 = Convert.ToString((int)x, 2);
-                                if(x2.Length < int.Parse(len))
+                                if (x2.Length < int.Parse(len))
                                 {
-                                    while(x2.Length < int.Parse(len))
+                                    while (x2.Length < int.Parse(len))
                                     {
                                         x2 += "0" + x2;
                                     }
@@ -291,6 +361,7 @@ namespace Cantool
                                 //获取要设置几位   此时的signal没有值
                                 //string len = signal.bitLength.ToString();
                                 string newlen = x2.Substring(0, int.Parse(len));
+                                //MessageBox.Show("newlen is : " + newlen);
                                 string from = signal.startBit.ToString();
                                 //把数据放到数组里
 
@@ -324,8 +395,30 @@ namespace Cantool
                 }
             }
             string result = "t" + t_id + "8" + temp16;
-           // MessageBox.Show("result is : " + result);
+            // MessageBox.Show("result is : " + result);
             return result;
+        }
+
+        public Boolean InOrNot(string str)
+        {
+
+            foreach (Message message in database)
+            {
+                // MessageBox.Show("message id is :" + message.messageId.ToString("x8"));
+                string temp_id = message.messageId.ToString("x8").TrimStart('0');
+                if (temp_id.Length != 3)
+                {
+                    while (temp_id.Length != 3)
+                    {
+                        temp_id = "0" + temp_id;
+                    }
+                }
+                if (temp_id == str)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
