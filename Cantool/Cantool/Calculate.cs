@@ -11,6 +11,7 @@ namespace Cantool
     class Calculate
     {
         public static List<Message> database = new List<Message>();
+        string messagename;
         //解析
         public void loadData(List<Message> db)
         {
@@ -30,7 +31,7 @@ namespace Cantool
             //motorola
             //string dealdata = mstorage(data);
             //intel
-            string messagename = findname(mid);
+            messagename = findname(mid);
             dic = decode(mid, data);
             //MessageBox.Show(dic.Count().ToString());
             //dic的size为0

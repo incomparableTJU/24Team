@@ -18,7 +18,9 @@ namespace Set_Com
     public partial class fm_receivedata : Form
     {
         Dictionary<string, string> dic = new Dictionary<string, string>();
-        List<string> signalname;
+        List<string> signalname = new List<string>();
+        int i = 0;
+        List<TreeGridNode> node = new List<TreeGridNode>();
         /// <summary>
         /// Com口是否设定
         /// </summary>
@@ -57,65 +59,9 @@ namespace Set_Com
         {
             byte[] ReDatas = new byte[comDevice.BytesToRead];
             comDevice.Read(ReDatas, 0, ReDatas.Length);
-            Calculate cal = new Calculate();
-            String sdata = new ASCIIEncoding().GetString(ReDatas);
-            try
-            {
-                if (sdata.StartsWith("t"))
-                {
 
-                    if (sdata.Length != 21)
-                    {
-                        //byte[] strBuffer = System.Text.Encoding.ASCII.GetBytes(yourASCIIString);
-                        string str = "wrong data length, please be check!";
-                        MessageBox.Show(str);
-                        comDevice.Write(str);
-                    }
-                    if (int.Parse(sdata.Substring(4, 1)) > 8)
-                    {
-                        string str = "wrong data bit , please be check!";
-                        MessageBox.Show(str);
-                        comDevice.Write(str);
-                    }
-                    if (!cal.InOrNot(sdata.Substring(1, 3)))
-                    {
-                        string str = "no this data id, please be check!";
-                        MessageBox.Show(str);
-                        comDevice.Write(str);
-                    }
-                }
-                else if (sdata.StartsWith("T"))
-                {
-                    if (sdata.Length != 26)
-                    {
-                        string str = "wrong data length, please be check!";
-                        MessageBox.Show(str);
-                        comDevice.Write(str);
-                    }
-                    if (int.Parse(sdata.Substring(9, 1)) > 8)
-                    {
-                        string str = "wrong data bit , please be check!";
-                        MessageBox.Show(str);
-                        comDevice.Write(str);
-                    }
-                    if (!cal.InOrNot(sdata.Substring(1, 8)))
-                    {
-                        string str = "no this data id, please be check!";
-                        MessageBox.Show(str);
-                        comDevice.Write(str);
-                    }
-                }
-                else
-                {
-                    string str = "wrong data, please be check!";
-                    MessageBox.Show(str);
-                    comDevice.Write(str);
-                }
-            }
-            catch
-            {
-                return;
-            }
+            String sdata = new ASCIIEncoding().GetString(ReDatas);
+           // MessageBox.Show(sdata);
             if (sdata == null || sdata.Trim() == "")
             {
                 String current_data = Message_DataBase.get_current_data();
@@ -126,13 +72,58 @@ namespace Set_Com
                 return;
             }
             Message_DataBase.set_current_data(sdata);
-           
-            //Calculate cal = new Calculate();          
+
+            Calculate cal = new Calculate();
             dic = cal.Decode(sdata);
-           
+
             //dic长度为0
             //MessageBox.Show("dic的长度为：" + dic.Count().ToString());
-            
+            Font boldFont = new Font(treeGridView1.DefaultCellStyle.Font, FontStyle.Bold);
+
+
+            if (this.IsHandleCreated)
+            {
+                this.BeginInvoke(new MethodInvoker(delegate
+                {
+                    foreach (KeyValuePair<string, string> kv in dic)
+                    {
+
+                        if (!signalname.Contains(kv.Key))
+                        {
+                            // MessageBox.Show("kv.Key");
+                            signalname.Add(kv.Key);
+
+                            //node.Add(new TreeGridNode());
+                            TreeGridNode node_temp = treeGridView1.Nodes.Add(null, kv.Key, kv.Value);
+                            node.Add(node_temp);
+                            // node[i]=treeGridView1.Nodes.Add(null, kv.Key, kv.Value);
+                            node[i].ImageIndex = 0;
+                            node[i].DefaultCellStyle.Font = boldFont;
+                            i++;
+                            /*  
+           TreeGridNode node2 = treeGridView1.Nodes.Add(null, "kv.Key"," kv.Value");
+           node2.ImageIndex = 0;
+           node2.DefaultCellStyle.Font = boldFont;
+           node2 = node2.Nodes.Add(null, "Re: Using DataView filter when binding to DataGridView", "tab");
+           node2.ImageIndex = 1;*/
+                        }
+                        else
+                        {
+                            for (int j = 0; j < signalname.Count(); j++)
+                            {
+                                if (kv.Key == signalname[j])
+                                {
+                                    node[j] = node[j].Nodes.Add(null, " ", kv.Value);
+                                    node[j].ImageIndex = 1;
+                                    node[j].DefaultCellStyle.Font = boldFont;
+                                }
+                            }
+                        }
+
+                    }
+                }));
+            }
+
             foreach (KeyValuePair<string, string> kv in dic)
             {
                 // string temp = "\r\n this is here!";
@@ -169,45 +160,8 @@ namespace Set_Com
         
         private void fm_receivedata_Shown(object sender, EventArgs e)
         {
-            Font boldFont = new Font(treeGridView1.DefaultCellStyle.Font, FontStyle.Bold);
-            List<TreeGridNode> node = new List<TreeGridNode>();
-            int i = 0;
-            foreach (KeyValuePair<string, string> kv in dic)
-            {
-                if (!signalname.Contains(kv.Key))
-                {
-                    signalname.Add(kv.Key);
-                    
-                    node[i] = treeGridView1.Nodes.Add(null, kv.Key, kv.Value);
-                    node[i].ImageIndex = 0;
-                    node[i].DefaultCellStyle.Font = boldFont;
-                    i++;
-                                 
-                }
-                else
-                {
-                    for (int j= 0; j < signalname.Count(); j++)
-                    {
-                        if (kv.Key ==signalname[j])
-                        {
-                            node[j].Nodes.Add(null," ",kv.Value);
-                            node[j].ImageIndex = 0;
-                            node[j].DefaultCellStyle.Font = boldFont;
-                        }
-                }
-                }
-                   
-               
-                
-
                 //  node = node.Nodes.Add(null, "Re: Using DataView filter when binding to DataGridView", "tab", @"10/19/2005 1:02 AM");
-                //  node.ImageIndex = 1;
-            }
-            TreeGridNode node2 = treeGridView1.Nodes.Add(null, "kv.Key"," kv.Value");
-            node2.ImageIndex = 0;
-            node2.DefaultCellStyle.Font = boldFont;
-            node2 = node2.Nodes.Add(null, "Re: Using DataView filter when binding to DataGridView", "tab");
-            node2.ImageIndex = 1;
+                //  node.ImageIndex = 1;               
         }
 
 
