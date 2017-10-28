@@ -27,10 +27,6 @@ namespace Cantool
                 this.cbx_message.ValueMember = "messageId";
                 this.cbx_message.DisplayMember = "messageName";
             }
-            else
-            {
-                MessageBox.Show("请先载入数据");
-            }
         }
         public SendData()
         {
@@ -172,6 +168,12 @@ namespace Cantool
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SerialPort comDevice = Com.get_com();
+            if (!comDevice.IsOpen)
+            {
+                MessageBox.Show("串口未打开", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Dictionary<string,string> dic = coleect_value();
             Message message = (Message)this.cbx_message.SelectedItem;
             String message_ID = message.messageId.ToString();
@@ -179,7 +181,6 @@ namespace Cantool
             Calculate cal = new Calculate();
             string result = cal.Put(message_ID, dic);
 
-            SerialPort comDevice = Com.get_com();
             byte[] sendData = null;
             sendData = Encoding.ASCII.GetBytes(result.Trim());
             this.SendData_(sendData, comDevice);

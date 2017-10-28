@@ -19,6 +19,7 @@ namespace Cantool
         Object content = "abcdefg"; //test
         
         public List<Message> database = new List<Message>();
+        public bool flag = false;
 
         public FileSaver()
         {
@@ -47,6 +48,7 @@ namespace Cantool
                     FileStream fs = new FileStream(filename, System.IO.FileMode.Create, System.IO.FileAccess.Write);
                     //StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.Default);
                     StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
+                    
                     for (int i = 0; i < database.Count(); i++)
                         sw.WriteLine(database[i].toString());
                     sw.Close();
@@ -181,6 +183,7 @@ namespace Cantool
                 sr.Close();
 
             }
+            flag = true;
             
         }
 

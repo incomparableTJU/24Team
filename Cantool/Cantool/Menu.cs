@@ -19,11 +19,11 @@ namespace Cantool
         public Menu()
         {
             InitializeComponent();
+
         }
 
-        private void 树状结构图ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 文件存储ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             //hide the last panel and add new panel
             this.panel.Controls.Clear();
             this.homePage.Visible = false;
@@ -37,23 +37,135 @@ namespace Cantool
 
             this.panel.Controls.Add(fileSaverForm);
             fileSaverForm.Show();
-            this.database = fileSaverForm.getDatabase();
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            if (fileSaverForm.flag != false)
+                this.database = fileSaverForm.getDatabase();
 
         }
+
 
         private void 首页ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.panel.Controls.Clear();
-            this.homePage.Visible = true;
-            this.panel.Visible = false;
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
+            {
+                this.panel.Controls.Clear();
+                this.homePage.Visible = true;
+                this.panel.Visible = false;
+            }
         }
 
-        private void 设定COM口ToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void can信息布局ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
+            {
+                //hide the last panel and add new panel
+                this.panel.Controls.Clear();
+                this.homePage.Visible = false;
+                this.panel.Visible = true;
+
+                //set the attribution
+                CanMessageLayout layout = new CanMessageLayout();
+                layout.loadData(database);
+
+                layout.TopLevel = false;
+                layout.Dock = System.Windows.Forms.DockStyle.Fill;
+                layout.FormBorderStyle = FormBorderStyle.None;
+
+                this.panel.Controls.Add(layout);
+                layout.Show();
+            }
+        }
+
+        private void 树状结构图ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
+            {
+                //hide the last panel and add new panel
+                this.panel.Controls.Clear();
+                this.homePage.Visible = false;
+                this.panel.Visible = true;
+
+                //set the attribution
+                TreeForm treeform = new TreeForm();
+                treeform.loadData(database);
+
+                treeform.TopLevel = false;
+                treeform.Dock = System.Windows.Forms.DockStyle.Fill;
+                treeform.FormBorderStyle = FormBorderStyle.None;
+
+                this.panel.Controls.Add(treeform);
+                treeform.Show();
+            }
+        }
+
+
+        private void 实时曲线ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
+            {
+                //hide the last panel and add new panel
+                this.panel.Controls.Clear();
+                this.homePage.Visible = false;
+                this.panel.Visible = true;
+
+                //set the attribution
+                CurveForm curveform = new CurveForm();
+
+                curveform.TopLevel = false;
+                curveform.Dock = System.Windows.Forms.DockStyle.Fill;
+                curveform.FormBorderStyle = FormBorderStyle.None;
+
+                this.panel.Controls.Add(curveform);
+                curveform.Show();
+            }
+        }
+
+        private void 仪表盘ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
+            {
+                //hide the last panel and add new panel
+                this.panel.Controls.Clear();
+                this.homePage.Visible = false;
+                this.panel.Visible = true;
+
+                //set the attribution
+                boardForm boardForm = new boardForm();
+                
+                boardForm.TopLevel = false;
+                boardForm.Dock = System.Windows.Forms.DockStyle.Fill;
+                boardForm.FormBorderStyle = FormBorderStyle.None;
+
+                this.panel.Controls.Add(boardForm);
+                boardForm.Show();
+
+                //bool open = Com.get_com().IsOpen;
+                //MessageBox.Show(open.ToString());
+            }
+        }
+
+        private void 用户设定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
+            {
+                SendData sendata = new SendData();
+                sendata.Show();
+            }
+        }
+
+        private void mitem_set_com_Click(object sender, EventArgs e)
         {
             //hide the last panel and add new panel
             this.panel.Controls.Clear();
@@ -70,124 +182,73 @@ namespace Cantool
             set_com.Show();
         }
 
-        private void can信息布局ToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void can总线通信参数ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //hide the last panel and add new panel
-            this.panel.Controls.Clear();
-            this.homePage.Visible = false;
-            this.panel.Visible = true;
+            if (isLoadTheDatabase())
+            {
 
-            //set the attribution
-            CanMessageLayout layout = new CanMessageLayout();
-            layout.loadData(database);
+                //hide the last panel and add new panel
+                this.panel.Controls.Clear();
+                this.homePage.Visible = false;
+                this.panel.Visible = true;
 
-            layout.TopLevel = false;
-            layout.Dock = System.Windows.Forms.DockStyle.Fill;
-            layout.FormBorderStyle = FormBorderStyle.None;
+                //set the attribution
+                SetVelocity setVelocity = new SetVelocity();
 
-            this.panel.Controls.Add(layout);
-            layout.Show();
+                setVelocity.TopLevel = false;
+                setVelocity.Dock = System.Windows.Forms.DockStyle.Fill;
+                setVelocity.FormBorderStyle = FormBorderStyle.None;
+
+                this.panel.Controls.Add(setVelocity);
+                setVelocity.Show();
+            }
         }
 
-        private void 文件存储ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void canTool装置ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            //hide the last panel and add new panel
-            this.panel.Controls.Clear();
-            this.homePage.Visible = false;
-            this.panel.Visible = true;
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
+            {
+                //hide the last panel and add new panel
+                this.panel.Controls.Clear();
+                this.homePage.Visible = false;
+                this.panel.Visible = true;
 
-            //set the attribution
-            TreeForm treeform = new TreeForm();
-            treeform.loadData(database);
+                //set the attribution
+                SetCantool setCanTool = new SetCantool();
 
-            treeform.TopLevel = false;
-            treeform.Dock = System.Windows.Forms.DockStyle.Fill;
-            treeform.FormBorderStyle = FormBorderStyle.None;
+                setCanTool.TopLevel = false;
+                setCanTool.Dock = System.Windows.Forms.DockStyle.Fill;
+                setCanTool.FormBorderStyle = FormBorderStyle.None;
 
-            this.panel.Controls.Add(treeform);
-            treeform.Show();
+                this.panel.Controls.Add(setCanTool);
+                setCanTool.Show();
+            }
         }
 
-        
-         private void 实时曲线ToolStripMenuItem1_Click(object sender, EventArgs e)
+        private bool isLoadTheDatabase()
         {
-            //hide the last panel and add new panel
-            this.panel.Controls.Clear();
-            this.homePage.Visible = false;
-            this.panel.Visible = true;
+            DialogResult dr = MessageBox.Show(" 请先加载数据库", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                //hide the last panel and add new panel
+                this.panel.Controls.Clear();
+                this.homePage.Visible = false;
+                this.panel.Visible = true;
 
-            //set the attribution
-            CurveForm curveform = new CurveForm();
+                //set the attribution
+                FileSaver fileSaverForm = new FileSaver();
+                fileSaverForm.TopLevel = false;
+                fileSaverForm.Dock = System.Windows.Forms.DockStyle.Fill;
+                fileSaverForm.FormBorderStyle = FormBorderStyle.None;
 
-            curveform.TopLevel = false;
-            curveform.Dock = System.Windows.Forms.DockStyle.Fill;
-            curveform.FormBorderStyle = FormBorderStyle.None;
+                this.panel.Controls.Add(fileSaverForm);
+                fileSaverForm.Show();
+                this.database = fileSaverForm.getDatabase();
+            }
+            return true;
 
-            this.panel.Controls.Add(curveform);
-            curveform.Show();
-        }
-
-        private void 仪表盘ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            //hide the last panel and add new panel
-            this.panel.Controls.Clear();
-            this.homePage.Visible = false;
-            this.panel.Visible = true;
-
-            //set the attribution
-            boardForm boardForm = new boardForm();
-
-            boardForm.TopLevel = false;
-            boardForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            boardForm.FormBorderStyle = FormBorderStyle.None;
-
-            this.panel.Controls.Add(boardForm);
-            boardForm.Show();
-
-            //bool open = Com.get_com().IsOpen;
-            //MessageBox.Show(open.ToString());
-        }
-
-        private void 用户设定ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SendData sendata = new SendData();
-            sendata.Show();
-        }
-
-        private void canTool装置ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //hide the last panel and add new panel
-            this.panel.Controls.Clear();
-            this.homePage.Visible = false;
-            this.panel.Visible = true;
-
-            //set the attribution
-            SetCantool setCanTool = new SetCantool();
-
-            setCanTool.TopLevel = false;
-            setCanTool.Dock = System.Windows.Forms.DockStyle.Fill;
-            setCanTool.FormBorderStyle = FormBorderStyle.None;
-
-            this.panel.Controls.Add(setCanTool);
-            setCanTool.Show();
-        }
-
-        private void can总线通信参数ToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            //hide the last panel and add new panel
-            this.panel.Controls.Clear();
-            this.homePage.Visible = false;
-            this.panel.Visible = true;
-
-            //set the attribution
-            SetVelocity setVelocity = new SetVelocity();
-
-            setVelocity.TopLevel = false;
-            setVelocity.Dock = System.Windows.Forms.DockStyle.Fill;
-            setVelocity.FormBorderStyle = FormBorderStyle.None;
-
-            this.panel.Controls.Add(setVelocity);
-            setVelocity.Show();
         }
     }
 }

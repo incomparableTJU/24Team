@@ -11,27 +11,18 @@
         private System.Windows.Forms.ToolStripMenuItem wenjianToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 控制ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem mitem_set_com;
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于CanToolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看日志ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 用户设定ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 接收数据ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem canTool装置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据库ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 树状结构图ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 文件存储ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem can信息物理值ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 仪表盘ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 实时曲线ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem can总线通信参数ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 首页ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem can信息布局ToolStripMenuItem1;
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel homePage;
         private System.Windows.Forms.Panel panel;
 
@@ -60,31 +51,26 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mitem_set_com = new System.Windows.Forms.ToolStripMenuItem();
             this.用户设定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.接收数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.canTool装置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.can总线通信参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.树状结构图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.文件存储ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.can信息布局ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.树状结构图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.can信息物理值ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.仪表盘ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.实时曲线ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.设置ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitem_set_com = new System.Windows.Forms.ToolStripMenuItem();
-            this.canTool装置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.can总线通信参数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于CanToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wenjianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.homePage = new System.Windows.Forms.Panel();
             this.panel = new System.Windows.Forms.Panel();
             this.menuStrip.SuspendLayout();
-            this.homePage.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -93,7 +79,6 @@
             this.首页ToolStripMenuItem,
             this.控制ToolStripMenuItem,
             this.设置ToolStripMenuItem,
-            this.设置ToolStripMenuItem1,
             this.帮助ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -111,24 +96,41 @@
             // 控制ToolStripMenuItem
             // 
             this.控制ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mitem_set_com,
             this.用户设定ToolStripMenuItem,
-            this.接收数据ToolStripMenuItem});
+            this.canTool装置ToolStripMenuItem,
+            this.can总线通信参数ToolStripMenuItem});
             this.控制ToolStripMenuItem.Name = "控制ToolStripMenuItem";
             this.控制ToolStripMenuItem.Size = new System.Drawing.Size(122, 35);
-            this.控制ToolStripMenuItem.Text = "数据处理";
+            this.控制ToolStripMenuItem.Text = "数据传输";
+            // 
+            // mitem_set_com
+            // 
+            this.mitem_set_com.Name = "mitem_set_com";
+            this.mitem_set_com.Size = new System.Drawing.Size(276, 36);
+            this.mitem_set_com.Text = "设置COM口";
+            this.mitem_set_com.Click += new System.EventHandler(this.mitem_set_com_Click);
             // 
             // 用户设定ToolStripMenuItem
             // 
             this.用户设定ToolStripMenuItem.Name = "用户设定ToolStripMenuItem";
-            this.用户设定ToolStripMenuItem.Size = new System.Drawing.Size(256, 36);
+            this.用户设定ToolStripMenuItem.Size = new System.Drawing.Size(276, 36);
             this.用户设定ToolStripMenuItem.Text = "发送设定物理值";
             this.用户设定ToolStripMenuItem.Click += new System.EventHandler(this.用户设定ToolStripMenuItem_Click);
             // 
-            // 接收数据ToolStripMenuItem
+            // canTool装置ToolStripMenuItem
             // 
-            this.接收数据ToolStripMenuItem.Name = "接收数据ToolStripMenuItem";
-            this.接收数据ToolStripMenuItem.Size = new System.Drawing.Size(256, 36);
-            this.接收数据ToolStripMenuItem.Text = "接收数据解析";
+            this.canTool装置ToolStripMenuItem.Name = "canTool装置ToolStripMenuItem";
+            this.canTool装置ToolStripMenuItem.Size = new System.Drawing.Size(276, 36);
+            this.canTool装置ToolStripMenuItem.Text = "CanTool装置";
+            this.canTool装置ToolStripMenuItem.Click += new System.EventHandler(this.canTool装置ToolStripMenuItem_Click_1);
+            // 
+            // can总线通信参数ToolStripMenuItem
+            // 
+            this.can总线通信参数ToolStripMenuItem.Name = "can总线通信参数ToolStripMenuItem";
+            this.can总线通信参数ToolStripMenuItem.Size = new System.Drawing.Size(276, 36);
+            this.can总线通信参数ToolStripMenuItem.Text = "Can总线通信参数";
+            this.can总线通信参数ToolStripMenuItem.Click += new System.EventHandler(this.can总线通信参数ToolStripMenuItem_Click);
             // 
             // 设置ToolStripMenuItem
             // 
@@ -142,25 +144,18 @@
             // 数据库ToolStripMenuItem
             // 
             this.数据库ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.树状结构图ToolStripMenuItem,
             this.文件存储ToolStripMenuItem,
-            this.can信息布局ToolStripMenuItem1});
+            this.can信息布局ToolStripMenuItem1,
+            this.树状结构图ToolStripMenuItem});
             this.数据库ToolStripMenuItem.Name = "数据库ToolStripMenuItem";
             this.数据库ToolStripMenuItem.Size = new System.Drawing.Size(252, 36);
             this.数据库ToolStripMenuItem.Text = "数据库";
-            // 
-            // 树状结构图ToolStripMenuItem
-            // 
-            this.树状结构图ToolStripMenuItem.Name = "树状结构图ToolStripMenuItem";
-            this.树状结构图ToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
-            this.树状结构图ToolStripMenuItem.Text = "文件存储";
-            this.树状结构图ToolStripMenuItem.Click += new System.EventHandler(this.树状结构图ToolStripMenuItem_Click);
             // 
             // 文件存储ToolStripMenuItem
             // 
             this.文件存储ToolStripMenuItem.Name = "文件存储ToolStripMenuItem";
             this.文件存储ToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
-            this.文件存储ToolStripMenuItem.Text = "树状结构图";
+            this.文件存储ToolStripMenuItem.Text = "文件存储";
             this.文件存储ToolStripMenuItem.Click += new System.EventHandler(this.文件存储ToolStripMenuItem_Click);
             // 
             // can信息布局ToolStripMenuItem1
@@ -169,6 +164,13 @@
             this.can信息布局ToolStripMenuItem1.Size = new System.Drawing.Size(228, 36);
             this.can信息布局ToolStripMenuItem1.Text = "Can信息布局";
             this.can信息布局ToolStripMenuItem1.Click += new System.EventHandler(this.can信息布局ToolStripMenuItem1_Click);
+            // 
+            // 树状结构图ToolStripMenuItem
+            // 
+            this.树状结构图ToolStripMenuItem.Name = "树状结构图ToolStripMenuItem";
+            this.树状结构图ToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
+            this.树状结构图ToolStripMenuItem.Text = "树状结构图";
+            this.树状结构图ToolStripMenuItem.Click += new System.EventHandler(this.树状结构图ToolStripMenuItem_Click);
             // 
             // can信息物理值ToolStripMenuItem
             // 
@@ -192,37 +194,6 @@
             this.实时曲线ToolStripMenuItem1.Size = new System.Drawing.Size(184, 36);
             this.实时曲线ToolStripMenuItem1.Text = "实时曲线";
             this.实时曲线ToolStripMenuItem1.Click += new System.EventHandler(this.实时曲线ToolStripMenuItem1_Click);
-            // 
-            // 设置ToolStripMenuItem1
-            // 
-            this.设置ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mitem_set_com,
-            this.canTool装置ToolStripMenuItem,
-            this.can总线通信参数ToolStripMenuItem});
-            this.设置ToolStripMenuItem1.Name = "设置ToolStripMenuItem1";
-            this.设置ToolStripMenuItem1.Size = new System.Drawing.Size(74, 35);
-            this.设置ToolStripMenuItem1.Text = "设置";
-            // 
-            // mitem_set_com
-            // 
-            this.mitem_set_com.Name = "mitem_set_com";
-            this.mitem_set_com.Size = new System.Drawing.Size(276, 36);
-            this.mitem_set_com.Text = "COM口";
-            this.mitem_set_com.Click += new System.EventHandler(this.设定COM口ToolStripMenuItem_Click);
-            // 
-            // canTool装置ToolStripMenuItem
-            // 
-            this.canTool装置ToolStripMenuItem.Name = "canTool装置ToolStripMenuItem";
-            this.canTool装置ToolStripMenuItem.Size = new System.Drawing.Size(276, 36);
-            this.canTool装置ToolStripMenuItem.Text = "CanTool装置";
-            this.canTool装置ToolStripMenuItem.Click += new System.EventHandler(this.canTool装置ToolStripMenuItem_Click);
-            // 
-            // can总线通信参数ToolStripMenuItem
-            // 
-            this.can总线通信参数ToolStripMenuItem.Name = "can总线通信参数ToolStripMenuItem";
-            this.can总线通信参数ToolStripMenuItem.Size = new System.Drawing.Size(276, 36);
-            this.can总线通信参数ToolStripMenuItem.Text = "Can总线通信参数";
-            this.can总线通信参数ToolStripMenuItem.Click += new System.EventHandler(this.can总线通信参数ToolStripMenuItem_Click_1);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -251,51 +222,19 @@
             this.wenjianToolStripMenuItem.Size = new System.Drawing.Size(74, 35);
             this.wenjianToolStripMenuItem.Text = "首页";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(74, 244);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 56);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "开启数据接口";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(74, 348);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(232, 56);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "关闭数据接口";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(388, 136);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(588, 394);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // homePage
             // 
-            this.homePage.Controls.Add(this.textBox1);
-            this.homePage.Controls.Add(this.button1);
-            this.homePage.Controls.Add(this.button2);
-            this.homePage.Location = new System.Drawing.Point(0, 42);
-            this.homePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.homePage.Location = new System.Drawing.Point(13, 0);
+            this.homePage.Margin = new System.Windows.Forms.Padding(4);
             this.homePage.Name = "homePage";
             this.homePage.Size = new System.Drawing.Size(1048, 748);
             this.homePage.TabIndex = 5;
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.homePage);
             this.panel.Location = new System.Drawing.Point(0, 42);
-            this.panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1048, 724);
             this.panel.TabIndex = 5;
@@ -307,15 +246,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 790);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.homePage);
             this.Controls.Add(this.panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.homePage.ResumeLayout(false);
-            this.homePage.PerformLayout();
+            this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +261,10 @@
 
 
         #endregion
+
+        private System.Windows.Forms.ToolStripMenuItem mitem_set_com;
+        private System.Windows.Forms.ToolStripMenuItem canTool装置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem can总线通信参数ToolStripMenuItem;
 
 
 
