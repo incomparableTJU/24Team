@@ -19,7 +19,8 @@ namespace Cantool
         Object content = "abcdefg"; //test
         
         public List<Message> database = new List<Message>();
-        public bool flag = false;
+        public static bool flagLoaded = false;
+        public bool flagUpdated = false;  
 
         public FileSaver()
         {
@@ -183,14 +184,15 @@ namespace Cantool
                 sr.Close();
 
             }
-            flag = true;
+            flagLoaded = true;
+            flagUpdated = true;
             
         }
 
 
         public List<Message> getDatabase()
         {
-            return database;
+            return this.database;
         }
 
     }
