@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AGauge.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -82,6 +88,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs" />
+    <Compile Include="Form11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Form1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Message.cs" />
     <Compile Include="FileSaver.cs">
       <SubType>Form</SubType>
@@ -103,6 +114,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReceiveData.Designer.cs" />
+    <Compile Include="ReceiveData1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceiveData.resx</DependentUpon>
+    </Compile>
     <Compile Include="SendData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,7 +143,13 @@
     <Compile Include="TreeGridNode.cs" />
     <Compile Include="TreeGridNodeCollection.cs" />
     <Compile Include="TreeGridView.cs" />
-    <EmbeddedResource Include="boardForm.resx" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="boardForm.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>boardForm1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CanMessageLayout.resx">
       <DependentUpon>CanMessageLayout.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,7 +159,10 @@
     <EmbeddedResource Include="FileSaver.resx">
       <DependentUpon>FileSaver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx" />
+    <EmbeddedResource Include="Form1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form11.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,12 +175,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReceiveData.resx" />
+    <EmbeddedResource Include="ReceiveData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReceiveData1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SendData.resx">
       <DependentUpon>SendData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetCantool.resx" />
-    <EmbeddedResource Include="SetVelocity.resx" />
+    <EmbeddedResource Include="SetCantool.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SetCantool1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetVelocity.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SetVelocity1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\Message.datasource" />
     <None Include="Properties\DataSources\Signal.datasource" />

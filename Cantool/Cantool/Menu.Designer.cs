@@ -71,11 +71,11 @@ namespace Cantool
             this.查看日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wenjianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homePage = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.homePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -218,6 +218,7 @@ namespace Cantool
             this.关于CanToolToolStripMenuItem.Name = "关于CanToolToolStripMenuItem";
             this.关于CanToolToolStripMenuItem.Size = new System.Drawing.Size(230, 36);
             this.关于CanToolToolStripMenuItem.Text = "关于CanTool";
+            this.关于CanToolToolStripMenuItem.Click += new System.EventHandler(this.关于CanToolToolStripMenuItem_Click);
             // 
             // 查看日志ToolStripMenuItem
             // 
@@ -241,6 +242,26 @@ namespace Cantool
             this.homePage.Name = "homePage";
             this.homePage.Size = new System.Drawing.Size(1100, 800);
             this.homePage.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(203, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(656, 42);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Welcome to Cantool APP For Windows!";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
             // 
             // pictureBox1
             // 
@@ -267,26 +288,6 @@ namespace Cantool
             this.pictureBox2.Size = new System.Drawing.Size(100, 50);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(203, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(656, 42);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Welcome to Cantool APP For Windows!";
             // 
             // Menu
             // 

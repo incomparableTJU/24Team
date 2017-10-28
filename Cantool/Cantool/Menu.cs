@@ -255,5 +255,11 @@ namespace Cantool
 
         }
 
+        private void 关于CanToolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
+
     }
 }
