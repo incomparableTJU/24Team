@@ -37,9 +37,12 @@ namespace Cantool
 
             this.panel.Controls.Add(fileSaverForm);
             fileSaverForm.Show();
-            if (fileSaverForm.flag != false)
+            
+            if ( FileSaver.flagLoaded == false )
                 this.database = fileSaverForm.getDatabase();
-
+            if (fileSaverForm.flagUpdated == true)
+                this.database = fileSaverForm.getDatabase();
+            
         }
 
 
@@ -184,9 +187,10 @@ namespace Cantool
 
         private void can总线通信参数ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (isLoadTheDatabase())
+            if (database.Count() == 0)
+                isLoadTheDatabase();
+            else
             {
-
                 //hide the last panel and add new panel
                 this.panel.Controls.Clear();
                 this.homePage.Visible = false;
@@ -250,5 +254,6 @@ namespace Cantool
             return true;
 
         }
+
     }
 }

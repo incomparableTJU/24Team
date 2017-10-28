@@ -1,4 +1,6 @@
-﻿namespace Cantool
+﻿using System.Drawing;
+using System.Windows.Forms;
+namespace Cantool
 {
     partial class Menu
     {
@@ -48,6 +50,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.控制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,9 +71,15 @@
             this.查看日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wenjianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homePage = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
-            this.panel.SuspendLayout();
+            this.homePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -82,7 +91,7 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1046, 39);
+            this.menuStrip.Size = new System.Drawing.Size(1100, 39);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menu";
             // 
@@ -224,36 +233,80 @@
             // 
             // homePage
             // 
+            this.homePage.Controls.Add(this.label2);
+            this.homePage.Controls.Add(this.label1);
+            this.homePage.Controls.Add(this.pictureBox1);
             this.homePage.Location = new System.Drawing.Point(13, 0);
             this.homePage.Margin = new System.Windows.Forms.Padding(4);
             this.homePage.Name = "homePage";
-            this.homePage.Size = new System.Drawing.Size(1048, 748);
+            this.homePage.Size = new System.Drawing.Size(1100, 800);
             this.homePage.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-10, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1100, 800);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.homePage);
             this.panel.Location = new System.Drawing.Point(0, 42);
             this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1048, 724);
+            this.panel.Size = new System.Drawing.Size(1100, 800);
             this.panel.TabIndex = 5;
             this.panel.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(203, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(656, 42);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Welcome to Cantool APP For Windows!";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 790);
+            this.ClientSize = new System.Drawing.Size(1100, 800);
             this.Controls.Add(this.menuStrip);
+            this.Controls.Add(this.homePage);
             this.Controls.Add(this.panel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.panel.ResumeLayout(false);
+            this.homePage.ResumeLayout(false);
+            this.homePage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,6 +318,10 @@
         private System.Windows.Forms.ToolStripMenuItem mitem_set_com;
         private System.Windows.Forms.ToolStripMenuItem canTool装置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem can总线通信参数ToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Label label2;
+        private Label label1;
 
 
 
