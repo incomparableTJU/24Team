@@ -11,7 +11,7 @@ namespace Cantool
     class Calculate
     {
         public static List<Message> database = new List<Message>();
-        string messagename;
+        public string messagename;
         //解析
         public void loadData(List<Message> db)
         {

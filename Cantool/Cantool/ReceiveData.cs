@@ -19,8 +19,10 @@ namespace Set_Com
     {
         Dictionary<string, string> dic = new Dictionary<string, string>();
         List<string> signalname = new List<string>();
+        List<string> message = new List<string>();
         int i = 0;
         List<TreeGridNode> node = new List<TreeGridNode>();
+        Calculate cal = new Calculate();
         /// <summary>
         /// Com口是否设定
         /// </summary>
@@ -61,7 +63,7 @@ namespace Set_Com
             comDevice.Read(ReDatas, 0, ReDatas.Length);
 
             String sdata = new ASCIIEncoding().GetString(ReDatas);
-           // MessageBox.Show(sdata);
+            // MessageBox.Show(sdata);
             if (sdata == null || sdata.Trim() == "")
             {
                 String current_data = Message_DataBase.get_current_data();
@@ -73,7 +75,7 @@ namespace Set_Com
             }
             Message_DataBase.set_current_data(sdata);
 
-            Calculate cal = new Calculate();
+
             dic = cal.Decode(sdata);
 
             //dic长度为0
@@ -85,29 +87,25 @@ namespace Set_Com
             {
                 this.BeginInvoke(new MethodInvoker(delegate
                 {
-                    foreach (KeyValuePair<string, string> kv in dic)
+                    if (!message.Contains(cal.messagename))
                     {
-
-                        if (!signalname.Contains(kv.Key))
+                        message.Add(cal.messagename);
+                        TreeGridNode node_temp = treeGridView1.Nodes.Add(null, cal.messagename, " ");
+                        
+                        foreach (KeyValuePair<string, string> kv in dic)
                         {
-                            // MessageBox.Show("kv.Key");
                             signalname.Add(kv.Key);
-
-                            //node.Add(new TreeGridNode());
-                            TreeGridNode node_temp = treeGridView1.Nodes.Add(null, kv.Key, kv.Value);
                             node.Add(node_temp);
-                            // node[i]=treeGridView1.Nodes.Add(null, kv.Key, kv.Value);
+                            node[i] = node_temp.Nodes.Add(null, kv.Key, kv.Value);
                             node[i].ImageIndex = 0;
                             node[i].DefaultCellStyle.Font = boldFont;
                             i++;
-                            /*  
-           TreeGridNode node2 = treeGridView1.Nodes.Add(null, "kv.Key"," kv.Value");
-           node2.ImageIndex = 0;
-           node2.DefaultCellStyle.Font = boldFont;
-           node2 = node2.Nodes.Add(null, "Re: Using DataView filter when binding to DataGridView", "tab");
-           node2.ImageIndex = 1;*/
                         }
-                        else
+                    }
+                    else
+                    {
+
+                        foreach (KeyValuePair<string, string> kv in dic)
                         {
                             for (int j = 0; j < signalname.Count(); j++)
                             {
@@ -119,10 +117,39 @@ namespace Set_Com
                                 }
                             }
                         }
-
+                           
                     }
-                }));
-            }
+                            /*   if (!signalname.Contains(kv.Key))
+                               {
+                                   TreeGridNode node_temp = treeGridView1.Nodes.Add(null, cal.messagename, " ");
+                                   signalname.Add(kv.Key);
+
+                                   //node.Add(new TreeGridNode());
+                                   TreeGridNode node_temp = treeGridView1.Nodes.Add(null, kv.Key, kv.Value);
+                                   node.Add(node_temp);
+                                   // node[i]=treeGridView1.Nodes.Add(null, kv.Key, kv.Value);
+                                   node[i].ImageIndex = 0;
+                                   node[i].DefaultCellStyle.Font = boldFont;
+                                   i++;
+                               }
+                               else
+                               {*/
+
+                      
+                    
+                }));        
+        }
+
+
+            // MessageBox.Show("kv.Key");
+
+            /*  
+TreeGridNode node2 = treeGridView1.Nodes.Add(null, "kv.Key"," kv.Value");
+node2.ImageIndex = 0;
+node2.DefaultCellStyle.Font = boldFont;
+node2 = node2.Nodes.Add(null, "Re: Using DataView filter when binding to DataGridView", "tab");
+node2.ImageIndex = 1;*/
+
 
             foreach (KeyValuePair<string, string> kv in dic)
             {
