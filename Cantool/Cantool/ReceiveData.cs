@@ -63,6 +63,63 @@ namespace Set_Com
             comDevice.Read(ReDatas, 0, ReDatas.Length);
 
             String sdata = new ASCIIEncoding().GetString(ReDatas);
+            try
+            {
+                if (sdata.StartsWith("t"))
+                {
+
+                    if (sdata.Length != 21)
+                    {
+                        //byte[] strBuffer = System.Text.Encoding.ASCII.GetBytes(yourASCIIString);
+                        string str = "wrong data length, please be check!";
+                        MessageBox.Show(str);
+                        comDevice.Write(str);
+                    }
+                    if (int.Parse(sdata.Substring(4, 1)) > 8)
+                    {
+                        string str = "wrong data bit , please be check!";
+                        MessageBox.Show(str);
+                        comDevice.Write(str);
+                    }
+                    if (!cal.InOrNot(sdata.Substring(1, 3)))
+                    {
+                        string str = "no this data id, please be check!";
+                        MessageBox.Show(str);
+                        comDevice.Write(str);
+                    }
+                }
+                else if (sdata.StartsWith("T"))
+                {
+                    if (sdata.Length != 26)
+                    {
+                        string str = "wrong data length, please be check!";
+                        MessageBox.Show(str);
+                        comDevice.Write(str);
+                    }
+                    if (int.Parse(sdata.Substring(9, 1)) > 8)
+                    {
+                        string str = "wrong data bit , please be check!";
+                        MessageBox.Show(str);
+                        comDevice.Write(str);
+                    }
+                    if (!cal.InOrNot(sdata.Substring(1, 8)))
+                    {
+                        string str = "no this data id, please be check!";
+                        MessageBox.Show(str);
+                        comDevice.Write(str);
+                    }
+                }
+                else
+                {
+                    string str = "wrong data, please be check!";
+                    MessageBox.Show(str);
+                    comDevice.Write(str);
+                }
+            }
+            catch
+            {
+                return;
+            }
             // MessageBox.Show(sdata);
             if (sdata == null || sdata.Trim() == "")
             {
