@@ -112,11 +112,11 @@ namespace Cantool
                         float temp_phy = 0f;
                         if (phy > float.Parse(D))
                         {
-                            temp_phy = phy;
+                            temp_phy = float.Parse(D);
                         }
                         else if (phy < float.Parse(C))
                         {
-                            temp_phy = phy;
+                            temp_phy = float.Parse(C);
                         }
                         else
                         {
